@@ -1,0 +1,3 @@
+[submodule "include/JLB"]
+	path = include/JLB
+	url = git@github.com:JLB-Racing/robonaut-logic.git
