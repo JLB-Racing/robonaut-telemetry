@@ -20,6 +20,8 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 
+include_directories(include)
+
 add_executable(telemetry_node src/telemetry.cc)
 target_include_directories(telemetry_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
@@ -32,10 +34,6 @@ install(TARGETS telemetry_node
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY launch
-  DESTINATION share/${PROJECT_NAME}/
-)
-
-install(DIRECTORY config
   DESTINATION share/${PROJECT_NAME}/
 )
 
