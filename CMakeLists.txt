@@ -19,6 +19,10 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(ament_index_cpp REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(tf2 REQUIRED)
 
 include_directories(include)
 
@@ -28,12 +32,20 @@ target_include_directories(telemetry_node PUBLIC
   $<INSTALL_INTERFACE:include>)
 ament_target_dependencies(telemetry_node 
   "rclcpp"  
+  "nav_msgs"
+  "ament_index_cpp"
+  "geometry_msgs"
+  "tf2"
   )
 
 install(TARGETS telemetry_node
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}/
+)
+
+install(DIRECTORY maps
   DESTINATION share/${PROJECT_NAME}/
 )
 
