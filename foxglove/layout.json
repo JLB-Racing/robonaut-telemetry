@@ -1,8 +1,1371 @@
 {
-  "configById": {},
+  "configById": {
+    "Plot!159hwde": {
+      "paths": [
+        {
+          "value": "/target_angle.data",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "showLine": true
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": true,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10
+    },
+    "Plot!o2jkhq": {
+      "paths": [
+        {
+          "value": "/target_speed.data",
+          "enabled": true,
+          "timestampMethod": "receiveTime"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": true,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10
+    },
+    "3D!p53tpv": {
+      "cameraState": {
+        "distance": 7.5,
+        "perspective": false,
+        "phi": 0.3368206285414249,
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOffset": [
+          0,
+          0,
+          -2.6230473919300266e-18
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "thetaOffset": 90,
+        "fovy": 40,
+        "near": 0,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {
+        "enableStats": false,
+        "syncCamera": false,
+        "transforms": {
+          "showLabel": false
+        }
+      },
+      "transforms": {},
+      "topics": {
+        "/map": {
+          "visible": true,
+          "frameLocked": true,
+          "colorMode": "custom"
+        },
+        "/pose": {
+          "visible": true,
+          "axisScale": 0.448,
+          "type": "arrow",
+          "arrowScale": [
+            0.25,
+            0.075,
+            0.075
+          ]
+        }
+      },
+      "layers": {},
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {},
+      "followTf": "map_transformed"
+    },
+    "Indicator!1uszlyr": {
+      "path": "/line_sensor_1.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!2tigo9p": {
+      "path": "/line_sensor_2.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!3ss6oqh": {
+      "path": "/line_sensor_3.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!41m0lkc": {
+      "path": "/line_sensor_4.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!3zhr58u": {
+      "path": "/line_sensor_5.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!2nztxt4": {
+      "path": "/line_sensor_6.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!3kkmqer": {
+      "path": "/line_sensor_7.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!1o00ho9": {
+      "path": "/line_sensor_8.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!1kdzoyr": {
+      "path": "/line_sensor_9.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!3jfum5y": {
+      "path": "/line_sensor_10.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!19x55yl": {
+      "path": "/line_sensor_11.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!c6rgra": {
+      "path": "/line_sensor_12.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!2a88rej": {
+      "path": "/line_sensor_13.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!38g383e": {
+      "path": "/line_sensor_14.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!2epejx8": {
+      "path": "/line_sensor_15.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!3umbvy8": {
+      "path": "/line_sensor_16.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!3kivszp": {
+      "path": "/line_sensor_17.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!ruaqhq": {
+      "path": "/line_sensor_18.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!2srg787": {
+      "path": "/line_sensor_19.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!1a35tyf": {
+      "path": "/line_sensor_20.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!1mq1vpa": {
+      "path": "/line_sensor_21.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!1glsb6j": {
+      "path": "/line_sensor_22.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!3mwl2c9": {
+      "path": "/line_sensor_23.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!18j6sp8": {
+      "path": "/line_sensor_24.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!4eef0e0": {
+      "path": "/line_sensor_25.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!3nwdpq9": {
+      "path": "/line_sensor_26.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!2bcbjfu": {
+      "path": "/line_sensor_27.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!1ufrcz2": {
+      "path": "/line_sensor_28.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!49xu0cn": {
+      "path": "/line_sensor_29.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!2wacpcw": {
+      "path": "/line_sensor_30.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!2eyihwk": {
+      "path": "/line_sensor_31.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!4lcihrw": {
+      "path": "/line_sensor_32.data",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Plot!pw3vmf": {
+      "paths": [
+        {
+          "value": "/meas_angular_velocity_z.data",
+          "enabled": true,
+          "timestampMethod": "receiveTime"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10
+    },
+    "Plot!1am6leu": {
+      "paths": [
+        {
+          "value": "/odom_angular_velocity_z.data",
+          "enabled": true,
+          "timestampMethod": "receiveTime"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10
+    },
+    "Plot!16go68f": {
+      "paths": [
+        {
+          "value": "/meas_motor_rpm.data",
+          "enabled": true,
+          "timestampMethod": "receiveTime"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10
+    },
+    "Plot!od7tg0": {
+      "paths": [
+        {
+          "value": "/odom_linear_velocity_x.data",
+          "enabled": true,
+          "timestampMethod": "receiveTime"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10
+    },
+    "Tab!3styih1": {
+      "activeTabIdx": 0,
+      "tabs": [
+        {
+          "title": "logic",
+          "layout": {
+            "first": {
+              "first": "Plot!159hwde",
+              "second": "Plot!o2jkhq",
+              "direction": "row"
+            },
+            "second": {
+              "first": "3D!p53tpv",
+              "second": {
+                "first": {
+                  "first": {
+                    "first": {
+                      "first": {
+                        "first": "Indicator!1uszlyr",
+                        "second": "Indicator!2tigo9p",
+                        "direction": "row"
+                      },
+                      "second": {
+                        "first": "Indicator!3ss6oqh",
+                        "second": "Indicator!41m0lkc",
+                        "direction": "row"
+                      },
+                      "direction": "row"
+                    },
+                    "second": {
+                      "first": {
+                        "first": "Indicator!3zhr58u",
+                        "second": "Indicator!2nztxt4",
+                        "direction": "row"
+                      },
+                      "second": {
+                        "first": "Indicator!3kkmqer",
+                        "second": "Indicator!1o00ho9",
+                        "direction": "row"
+                      },
+                      "direction": "row"
+                    },
+                    "direction": "row"
+                  },
+                  "second": {
+                    "first": {
+                      "first": {
+                        "first": "Indicator!1kdzoyr",
+                        "second": "Indicator!3jfum5y",
+                        "direction": "row"
+                      },
+                      "second": {
+                        "first": "Indicator!19x55yl",
+                        "second": "Indicator!c6rgra",
+                        "direction": "row"
+                      },
+                      "direction": "row"
+                    },
+                    "second": {
+                      "first": {
+                        "first": "Indicator!2a88rej",
+                        "second": "Indicator!38g383e",
+                        "direction": "row"
+                      },
+                      "second": {
+                        "first": "Indicator!2epejx8",
+                        "second": "Indicator!3umbvy8",
+                        "direction": "row"
+                      },
+                      "direction": "row"
+                    },
+                    "direction": "row"
+                  },
+                  "direction": "row"
+                },
+                "second": {
+                  "first": {
+                    "first": {
+                      "first": {
+                        "first": "Indicator!3kivszp",
+                        "second": "Indicator!ruaqhq",
+                        "direction": "row"
+                      },
+                      "second": {
+                        "first": "Indicator!2srg787",
+                        "second": "Indicator!1a35tyf",
+                        "direction": "row"
+                      },
+                      "direction": "row"
+                    },
+                    "second": {
+                      "first": {
+                        "first": "Indicator!1mq1vpa",
+                        "second": "Indicator!1glsb6j",
+                        "direction": "row"
+                      },
+                      "second": {
+                        "first": "Indicator!3mwl2c9",
+                        "second": "Indicator!18j6sp8",
+                        "direction": "row"
+                      },
+                      "direction": "row"
+                    },
+                    "direction": "row"
+                  },
+                  "second": {
+                    "first": {
+                      "first": {
+                        "first": "Indicator!4eef0e0",
+                        "second": "Indicator!3nwdpq9",
+                        "direction": "row"
+                      },
+                      "second": {
+                        "first": "Indicator!2bcbjfu",
+                        "second": "Indicator!1ufrcz2",
+                        "direction": "row"
+                      },
+                      "direction": "row"
+                    },
+                    "second": {
+                      "first": {
+                        "first": "Indicator!49xu0cn",
+                        "second": "Indicator!2wacpcw",
+                        "direction": "row"
+                      },
+                      "second": {
+                        "first": "Indicator!2eyihwk",
+                        "second": "Indicator!4lcihrw",
+                        "direction": "row"
+                      },
+                      "direction": "row"
+                    },
+                    "direction": "row"
+                  },
+                  "direction": "row"
+                },
+                "direction": "row"
+              },
+              "direction": "column",
+              "splitPercentage": 81.50531053975054
+            },
+            "direction": "column",
+            "splitPercentage": 42.92929292929293
+          }
+        },
+        {
+          "title": "meas",
+          "layout": {
+            "first": {
+              "first": "Plot!pw3vmf",
+              "second": "Plot!1am6leu",
+              "direction": "row"
+            },
+            "second": {
+              "first": "Plot!16go68f",
+              "second": "Plot!od7tg0",
+              "direction": "row"
+            },
+            "direction": "column"
+          }
+        }
+      ]
+    }
+  },
   "globalVariables": {},
   "userNodes": {},
   "playbackConfig": {
     "speed": 1
-  }
+  },
+  "layout": "Tab!3styih1"
 }

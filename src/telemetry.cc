@@ -19,6 +19,7 @@
 #include <geometry_msgs/msg/transform_stamped.hpp>
 #include <tf2_ros/static_transform_broadcaster.h>
 #include <tf2/LinearMath/Quaternion.h>
+#include <tf2/LinearMath/Matrix3x3.h>
 
 namespace jlb
 {
@@ -34,8 +35,8 @@ namespace jlb
 
             map_publisher = create_publisher<nav_msgs::msg::OccupancyGrid>("map", 10);
             pose_publisher = create_publisher<geometry_msgs::msg::PoseStamped>("pose", 10);
-            map_timer = create_wall_timer(std::chrono::milliseconds(1000), std::bind(&Telemetry::map_timer_callback, this));
-            udp_timer = create_wall_timer(std::chrono::milliseconds(10), std::bind(&Telemetry::upd_timer_callback, this));
+            map_timer = create_wall_timer(std::chrono::milliseconds(16), std::bind(&Telemetry::map_timer_callback, this));
+            udp_timer = create_wall_timer(std::chrono::milliseconds(1), std::bind(&Telemetry::upd_timer_callback, this));
 
             for (const auto &signal : jlb::SignalLibrary::get_instance().signals)
             {
@@ -146,17 +147,46 @@ namespace jlb
             transform.child_frame_id = "map_transformed"; // Target frame (map_transformed)
 
             // Apply the y-axis mirroring transformation
-            transform.transform.translation.x = 0.0;
-            transform.transform.translation.y = 0.0;
+            transform.transform.translation.x = 8.0;
+            transform.transform.translation.y = 8.0;
             transform.transform.translation.z = 0.0;
             tf2::Quaternion q2;
-            q2.setRPY(M_PI, 0.0, 0.0);
+            q2.setRPY(M_PI, 0.0, -M_PI / 2.0);
             geometry_msgs::msg::Quaternion q2_msg;
             q2_msg.x = q2.x();
             q2_msg.y = q2.y();
             q2_msg.z = q2.z();
             q2_msg.w = q2.w();
             transform.transform.rotation = q2_msg;
+
+            // Create a transform message
+            geometry_msgs::msg::TransformStamped transform_pose;
+            transform_pose.header.stamp = this->now(); // Time stamp
+            transform_pose.header.frame_id = "map";    // Source frame (map)
+            transform_pose.child_frame_id = "pose";    // Target frame (map_transformed)
+
+            // Apply the y-axis mirroring transformation
+            transform_pose.transform.translation.x = pose_msg.pose.position.x;
+            transform_pose.transform.translation.y = pose_msg.pose.position.y;
+            transform_pose.transform.translation.z = 0.0;
+            tf2::Quaternion q3{pose_msg.pose.orientation.x, pose_msg.pose.orientation.y, pose_msg.pose.orientation.z, pose_msg.pose.orientation.w};
+            // q2.setRPY(M_PI, 0.0, 0.0);
+            auto yaw = 0.0;
+            auto pitch = 0.0;
+            auto roll = 0.0;
+            tf2::Matrix3x3 m(q3);
+            m.getRPY(roll, pitch, yaw);
+
+            q3.setRPY(roll + M_PI, pitch, yaw);
+            geometry_msgs::msg::Quaternion q3_msg;
+            q3_msg.x = q3.x();
+            q3_msg.y = q3.y();
+            q3_msg.z = q3.z();
+            q3_msg.w = q3.w();
+            transform_pose.transform.rotation = q3_msg;
+
+            // Publish the transform
+            tf_broadcaster.sendTransform(transform_pose);
 
             // Publish the transform
             tf_broadcaster.sendTransform(transform);
