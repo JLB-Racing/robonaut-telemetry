@@ -37,5 +37,5 @@
     <param name="asset_uri_allowlist"     value="$(var asset_uri_allowlist)" />
   </node>
 
-  <node pkg="robonaut-telemetry" exec="telemetry_node"/>
+  <node pkg="robonaut_telemetry" exec="telemetry_node"/>
 </launch>

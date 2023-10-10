@@ -9,6 +9,7 @@
 #include "JLB/udp.hxx"
 #include "JLB/common.hxx"
 #include "JLB/signals.hxx"
+#include "jlb-binutil.h"
 
 #include <rclcpp/rclcpp.hpp>
 #include <ament_index_cpp/get_package_share_directory.hpp>
@@ -20,6 +21,7 @@
 #include <tf2_ros/static_transform_broadcaster.h>
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2/LinearMath/Matrix3x3.h>
+#include <robonaut_telemetry/msg/measurements1.hpp>
 
 namespace jlb
 {
@@ -38,10 +40,7 @@ namespace jlb
             map_timer = create_wall_timer(std::chrono::milliseconds(16), std::bind(&Telemetry::map_timer_callback, this));
             udp_timer = create_wall_timer(std::chrono::milliseconds(1), std::bind(&Telemetry::upd_timer_callback, this));
 
-            for (const auto &signal : jlb::SignalLibrary::get_instance().signals)
-            {
-                publishers.push_back(create_publisher<std_msgs::msg::Float32>(signal.name, 10));
-            }
+            measurements1_publisher = create_publisher<robonaut_telemetry::msg::Measurements1>("measurements1", 10);
         }
         ~Telemetry()
         {
@@ -49,17 +48,18 @@ namespace jlb
         }
 
     private:
-        std::vector<int8_t> map;
-
+        jlb_rx_t jlb_rx_t;
         UDPServer server;
-        std::vector<rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr> publishers;
+        std::map<std::string, rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr> publishers;
 
+        std::vector<int8_t> map;
         nav_msgs::msg::OccupancyGrid map_msg;
         rclcpp::Publisher<nav_msgs::msg::OccupancyGrid>::SharedPtr map_publisher;
         tf2_ros::StaticTransformBroadcaster tf_broadcaster;
-
         geometry_msgs::msg::PoseStamped pose_msg;
         rclcpp::Publisher<geometry_msgs::msg::PoseStamped>::SharedPtr pose_publisher;
+
+        rclcpp::Publisher<robonaut_telemetry::msg::Measurements1>::SharedPtr measurements1_publisher;
 
         rclcpp::TimerBase::SharedPtr map_timer;
         rclcpp::TimerBase::SharedPtr udp_timer;
@@ -67,17 +67,13 @@ namespace jlb
         void parse_map(const std::string &filename)
         {
             std::ifstream map_file;
-            auto robonaut_telemetry_share_dir = ament_index_cpp::get_package_share_directory("robonaut-telemetry");
+            auto robonaut_telemetry_share_dir = ament_index_cpp::get_package_share_directory("robonaut_telemetry");
             auto file_path = robonaut_telemetry_share_dir + "/maps/" + filename;
 
             map_file.open(file_path);
             std::string line;
             std::getline(map_file, line);
-            if (map_file.is_open())
-            {
-                RCLCPP_INFO(this->get_logger(), "map file opened.");
-            }
-            else
+            if (!map_file.is_open())
             {
                 RCLCPP_ERROR(this->get_logger(), "map file not found.");
                 return;
@@ -170,7 +166,6 @@ namespace jlb
             transform_pose.transform.translation.y = pose_msg.pose.position.y;
             transform_pose.transform.translation.z = 0.0;
             tf2::Quaternion q3{pose_msg.pose.orientation.x, pose_msg.pose.orientation.y, pose_msg.pose.orientation.z, pose_msg.pose.orientation.w};
-            // q2.setRPY(M_PI, 0.0, 0.0);
             auto yaw = 0.0;
             auto pitch = 0.0;
             auto roll = 0.0;
@@ -196,36 +191,83 @@ namespace jlb
 
         void upd_timer_callback()
         {
-            char msg[5] = {0};
+            char data[1500] = {0};
 
-            if (server.recv(msg, sizeof(msg)) > 0)
+            if (server.recv(data, sizeof(data)) > 0)
             {
-                jlb::Value value{msg, sizeof(msg)};
-                auto msg = std_msgs::msg::Float32();
-                msg.data = value.value;
-                publishers.at(value.id)->publish(msg);
+                uint32_t can_id = data[0];
+                uint8_t dlc = data[1];
+                uint32_t received_id = jlb_Receive(&jlb_rx_t, reinterpret_cast<uint8_t *>(data + 2), can_id, dlc);
 
-                if (value.signal.name == "position_x")
+                switch (received_id)
                 {
-                    pose_msg.pose.position.x = value.value * map_msg.info.resolution;
-                    pose_publisher->publish(pose_msg);
-                }
-                else if (value.signal.name == "position_y")
+                case measurements_1_CANID:
                 {
-                    pose_msg.pose.position.y = value.value * map_msg.info.resolution;
-                    pose_publisher->publish(pose_msg);
+                    robonaut_telemetry::msg::Measurements1 measurements1_msg;
+                    measurements1_msg.line_sensor_1 = jlb_rx_t.measurements_1.line_sensor_1;
+                    measurements1_msg.line_sensor_2 = jlb_rx_t.measurements_1.line_sensor_2;
+                    measurements1_msg.line_sensor_3 = jlb_rx_t.measurements_1.line_sensor_3;
+                    measurements1_msg.line_sensor_4 = jlb_rx_t.measurements_1.line_sensor_4;
+                    measurements1_msg.line_sensor_5 = jlb_rx_t.measurements_1.line_sensor_5;
+                    measurements1_msg.line_sensor_6 = jlb_rx_t.measurements_1.line_sensor_6;
+                    measurements1_msg.line_sensor_7 = jlb_rx_t.measurements_1.line_sensor_7;
+                    measurements1_msg.line_sensor_8 = jlb_rx_t.measurements_1.line_sensor_8;
+                    measurements1_msg.line_sensor_9 = jlb_rx_t.measurements_1.line_sensor_9;
+                    measurements1_msg.line_sensor_10 = jlb_rx_t.measurements_1.line_sensor_10;
+                    measurements1_msg.line_sensor_11 = jlb_rx_t.measurements_1.line_sensor_11;
+                    measurements1_msg.line_sensor_12 = jlb_rx_t.measurements_1.line_sensor_12;
+                    measurements1_msg.line_sensor_13 = jlb_rx_t.measurements_1.line_sensor_13;
+                    measurements1_msg.line_sensor_14 = jlb_rx_t.measurements_1.line_sensor_14;
+                    measurements1_msg.line_sensor_15 = jlb_rx_t.measurements_1.line_sensor_15;
+                    measurements1_msg.line_sensor_16 = jlb_rx_t.measurements_1.line_sensor_16;
+                    measurements1_msg.line_sensor_17 = jlb_rx_t.measurements_1.line_sensor_17;
+                    measurements1_msg.line_sensor_18 = jlb_rx_t.measurements_1.line_sensor_18;
+                    measurements1_msg.line_sensor_19 = jlb_rx_t.measurements_1.line_sensor_19;
+                    measurements1_msg.line_sensor_20 = jlb_rx_t.measurements_1.line_sensor_20;
+                    measurements1_msg.line_sensor_21 = jlb_rx_t.measurements_1.line_sensor_21;
+                    measurements1_msg.line_sensor_22 = jlb_rx_t.measurements_1.line_sensor_22;
+                    measurements1_msg.line_sensor_23 = jlb_rx_t.measurements_1.line_sensor_23;
+                    measurements1_msg.line_sensor_24 = jlb_rx_t.measurements_1.line_sensor_24;
+                    measurements1_msg.line_sensor_25 = jlb_rx_t.measurements_1.line_sensor_25;
+                    measurements1_msg.line_sensor_26 = jlb_rx_t.measurements_1.line_sensor_26;
+                    measurements1_msg.line_sensor_27 = jlb_rx_t.measurements_1.line_sensor_27;
+                    measurements1_msg.line_sensor_28 = jlb_rx_t.measurements_1.line_sensor_28;
+                    measurements1_msg.line_sensor_29 = jlb_rx_t.measurements_1.line_sensor_29;
+                    measurements1_msg.line_sensor_30 = jlb_rx_t.measurements_1.line_sensor_30;
+                    measurements1_msg.line_sensor_31 = jlb_rx_t.measurements_1.line_sensor_31;
+                    measurements1_msg.line_sensor_32 = jlb_rx_t.measurements_1.line_sensor_32;
+                    measurements1_msg.angular_velocity_x_ro = jlb_rx_t.measurements_1.angular_velocity_x_ro;
+                    measurements1_msg.angular_velocity_y_ro = jlb_rx_t.measurements_1.angular_velocity_y_ro;
+                    measurements1_publisher->publish(measurements1_msg);
+                    break;
                 }
-                else if (value.signal.name == "position_theta")
-                {
-                    tf2::Quaternion q2;
-                    q2.setRPY(0.0, 0.0, value.value);
-                    geometry_msgs::msg::Quaternion q2_msg;
-                    q2_msg.x = q2.x();
-                    q2_msg.y = q2.y();
-                    q2_msg.z = q2.z();
-                    q2_msg.w = q2.w();
-                    pose_msg.pose.orientation = q2_msg;
+                case measurements_2_CANID:
+                    break;
+                default:
+                    break;
                 }
+
+                // if (value.signal.name == "position_x")
+                // {
+                //     pose_msg.pose.position.x = value.value * map_msg.info.resolution;
+                //     pose_publisher->publish(pose_msg);
+                // }
+                // else if (value.signal.name == "position_y")
+                // {
+                //     pose_msg.pose.position.y = value.value * map_msg.info.resolution;
+                //     pose_publisher->publish(pose_msg);
+                // }
+                // else if (value.signal.name == "position_theta")
+                // {
+                //     tf2::Quaternion q2;
+                //     q2.setRPY(0.0, 0.0, value.value);
+                //     geometry_msgs::msg::Quaternion q2_msg;
+                //     q2_msg.x = q2.x();
+                //     q2_msg.y = q2.y();
+                //     q2_msg.z = q2.z();
+                //     q2_msg.w = q2.w();
+                //     pose_msg.pose.orientation = q2_msg;
+                // }
             }
         }
     };

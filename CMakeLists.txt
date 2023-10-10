@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.27)
 cmake_policy(SET CMP0148 OLD)
-project(robonaut-telemetry)
+project(robonaut_telemetry)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -24,6 +24,15 @@ find_package(ament_index_cpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+find_package(sensor_msgs REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/Measurements1.msg"
+  DEPENDENCIES sensor_msgs std_msgs
+)
+
+ament_export_dependencies(rosidl_default_runtime)
 
 include_directories(include)
 
@@ -39,6 +48,15 @@ ament_target_dependencies(telemetry_node
   "tf2"
   "tf2_ros"
   )
+
+rosidl_target_interfaces(telemetry_node
+  ${PROJECT_NAME} "rosidl_typesupport_cpp")
+
+add_subdirectory(include/JLB)
+include_directories(include/JLB/lib/can_matrix/butl)
+include_directories(include/JLB/lib/can_matrix/conf)
+include_directories(include/JLB/lib/can_matrix/lib)
+target_link_libraries(telemetry_node can_matrix)
 
 install(TARGETS telemetry_node
   DESTINATION lib/${PROJECT_NAME})
