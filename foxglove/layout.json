@@ -3,7 +3,7 @@
     "Plot!159hwde": {
       "paths": [
         {
-          "value": "/target_angle.data",
+          "value": "/logic1.target_angle",
           "enabled": true,
           "timestampMethod": "receiveTime",
           "showLine": true
@@ -22,7 +22,7 @@
     "Plot!o2jkhq": {
       "paths": [
         {
-          "value": "/target_speed.data",
+          "value": "/logic1.target_speed",
           "enabled": true,
           "timestampMethod": "receiveTime"
         }
@@ -103,7 +103,7 @@
       "followTf": "map_transformed"
     },
     "Indicator!1uszlyr": {
-      "path": "/line_sensor_1.data",
+      "path": "/measurements1.line_sensor_1",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -135,7 +135,7 @@
       ]
     },
     "Indicator!2tigo9p": {
-      "path": "/line_sensor_2.data",
+      "path": "/measurements1.line_sensor_2",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -167,7 +167,7 @@
       ]
     },
     "Indicator!3ss6oqh": {
-      "path": "/line_sensor_3.data",
+      "path": "/measurements1.line_sensor_3",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -199,7 +199,7 @@
       ]
     },
     "Indicator!41m0lkc": {
-      "path": "/line_sensor_4.data",
+      "path": "/measurements1.line_sensor_4",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -231,7 +231,7 @@
       ]
     },
     "Indicator!3zhr58u": {
-      "path": "/line_sensor_5.data",
+      "path": "/measurements1.line_sensor_5",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -263,7 +263,7 @@
       ]
     },
     "Indicator!2nztxt4": {
-      "path": "/line_sensor_6.data",
+      "path": "/measurements1.line_sensor_6",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -295,7 +295,7 @@
       ]
     },
     "Indicator!3kkmqer": {
-      "path": "/line_sensor_7.data",
+      "path": "/measurements1.line_sensor_7",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -327,7 +327,7 @@
       ]
     },
     "Indicator!1o00ho9": {
-      "path": "/line_sensor_8.data",
+      "path": "/measurements1.line_sensor_8",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -359,7 +359,7 @@
       ]
     },
     "Indicator!1kdzoyr": {
-      "path": "/line_sensor_9.data",
+      "path": "/measurements1.line_sensor_9",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -391,7 +391,7 @@
       ]
     },
     "Indicator!3jfum5y": {
-      "path": "/line_sensor_10.data",
+      "path": "/measurements1.line_sensor_10",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -423,7 +423,7 @@
       ]
     },
     "Indicator!19x55yl": {
-      "path": "/line_sensor_11.data",
+      "path": "/measurements1.line_sensor_11",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -455,7 +455,7 @@
       ]
     },
     "Indicator!c6rgra": {
-      "path": "/line_sensor_12.data",
+      "path": "/measurements1.line_sensor_12",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -487,7 +487,7 @@
       ]
     },
     "Indicator!2a88rej": {
-      "path": "/line_sensor_13.data",
+      "path": "/measurements1.line_sensor_13",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -519,7 +519,7 @@
       ]
     },
     "Indicator!38g383e": {
-      "path": "/line_sensor_14.data",
+      "path": "/measurements1.line_sensor_14",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -551,7 +551,7 @@
       ]
     },
     "Indicator!2epejx8": {
-      "path": "/line_sensor_15.data",
+      "path": "/measurements1.line_sensor_15",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -583,7 +583,7 @@
       ]
     },
     "Indicator!3umbvy8": {
-      "path": "/line_sensor_16.data",
+      "path": "/measurements1.line_sensor_16",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -615,7 +615,7 @@
       ]
     },
     "Indicator!3kivszp": {
-      "path": "/line_sensor_17.data",
+      "path": "/measurements1.line_sensor_17",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -647,7 +647,7 @@
       ]
     },
     "Indicator!ruaqhq": {
-      "path": "/line_sensor_18.data",
+      "path": "/measurements1.line_sensor_18",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -679,7 +679,7 @@
       ]
     },
     "Indicator!2srg787": {
-      "path": "/line_sensor_19.data",
+      "path": "/measurements1.line_sensor_19",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -711,7 +711,7 @@
       ]
     },
     "Indicator!1a35tyf": {
-      "path": "/line_sensor_20.data",
+      "path": "/measurements1.line_sensor_20",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -743,7 +743,7 @@
       ]
     },
     "Indicator!1mq1vpa": {
-      "path": "/line_sensor_21.data",
+      "path": "/measurements1.line_sensor_21",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -775,7 +775,7 @@
       ]
     },
     "Indicator!1glsb6j": {
-      "path": "/line_sensor_22.data",
+      "path": "/measurements1.line_sensor_22",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -807,7 +807,7 @@
       ]
     },
     "Indicator!3mwl2c9": {
-      "path": "/line_sensor_23.data",
+      "path": "/measurements1.line_sensor_23",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -839,7 +839,7 @@
       ]
     },
     "Indicator!18j6sp8": {
-      "path": "/line_sensor_24.data",
+      "path": "/measurements1.line_sensor_24",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -871,7 +871,7 @@
       ]
     },
     "Indicator!4eef0e0": {
-      "path": "/line_sensor_25.data",
+      "path": "/measurements1.line_sensor_25",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -903,7 +903,7 @@
       ]
     },
     "Indicator!3nwdpq9": {
-      "path": "/line_sensor_26.data",
+      "path": "/measurements1.line_sensor_26",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -935,7 +935,7 @@
       ]
     },
     "Indicator!2bcbjfu": {
-      "path": "/line_sensor_27.data",
+      "path": "/measurements1.line_sensor_27",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -967,7 +967,7 @@
       ]
     },
     "Indicator!1ufrcz2": {
-      "path": "/line_sensor_28.data",
+      "path": "/measurements1.line_sensor_28",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -999,7 +999,7 @@
       ]
     },
     "Indicator!49xu0cn": {
-      "path": "/line_sensor_29.data",
+      "path": "/measurements1.line_sensor_29",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -1031,7 +1031,7 @@
       ]
     },
     "Indicator!2wacpcw": {
-      "path": "/line_sensor_30.data",
+      "path": "/measurements1.line_sensor_30",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -1063,7 +1063,7 @@
       ]
     },
     "Indicator!2eyihwk": {
-      "path": "/line_sensor_31.data",
+      "path": "/measurements1.line_sensor_31",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -1095,7 +1095,7 @@
       ]
     },
     "Indicator!4lcihrw": {
-      "path": "/line_sensor_32.data",
+      "path": "/measurements1.line_sensor_32",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -1129,7 +1129,7 @@
     "Plot!pw3vmf": {
       "paths": [
         {
-          "value": "/meas_angular_velocity_z.data",
+          "value": "/measurements2.angular_velocity_x",
           "enabled": true,
           "timestampMethod": "receiveTime"
         }
@@ -1147,7 +1147,25 @@
     "Plot!1am6leu": {
       "paths": [
         {
-          "value": "/odom_angular_velocity_z.data",
+          "value": "/measurements2.angular_velocity_y",
+          "enabled": true,
+          "timestampMethod": "receiveTime"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10
+    },
+    "Plot!3exng25": {
+      "paths": [
+        {
+          "value": "/measurements2.angular_velocity_z",
           "enabled": true,
           "timestampMethod": "receiveTime"
         }
@@ -1165,7 +1183,25 @@
     "Plot!16go68f": {
       "paths": [
         {
-          "value": "/meas_motor_rpm.data",
+          "value": "/measurements3.linear_acceleration_x",
+          "enabled": true,
+          "timestampMethod": "receiveTime"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10
+    },
+    "Plot!2t3pdtt": {
+      "paths": [
+        {
+          "value": "/odometry2.linear_velocity_x",
           "enabled": true,
           "timestampMethod": "receiveTime"
         }
@@ -1183,7 +1219,61 @@
     "Plot!od7tg0": {
       "paths": [
         {
-          "value": "/odom_linear_velocity_x.data",
+          "value": "/measurements3.linear_acceleration_y",
+          "enabled": true,
+          "timestampMethod": "receiveTime"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10
+    },
+    "Plot!2d67cqx": {
+      "paths": [
+        {
+          "value": "/measurements4.motor_rpm",
+          "enabled": true,
+          "timestampMethod": "receiveTime"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10
+    },
+    "Plot!1b2kjjx": {
+      "paths": [
+        {
+          "value": "/measurements3.linear_acceleration_z",
+          "enabled": true,
+          "timestampMethod": "receiveTime"
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": true,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10
+    },
+    "Plot!1xc8ha3": {
+      "paths": [
+        {
+          "value": "/odometry2.angular_velocity_z",
           "enabled": true,
           "timestampMethod": "receiveTime"
         }
@@ -1199,7 +1289,7 @@
       "followingViewWidth": 10
     },
     "Tab!3styih1": {
-      "activeTabIdx": 0,
+      "activeTabIdx": 1,
       "tabs": [
         {
           "title": "logic",
@@ -1299,7 +1389,8 @@
                         "second": "Indicator!18j6sp8",
                         "direction": "row"
                       },
-                      "direction": "row"
+                      "direction": "row",
+                      "splitPercentage": 50
                     },
                     "direction": "row"
                   },
@@ -1348,15 +1439,38 @@
           "layout": {
             "first": {
               "first": "Plot!pw3vmf",
-              "second": "Plot!1am6leu",
-              "direction": "row"
+              "second": {
+                "first": "Plot!1am6leu",
+                "second": "Plot!3exng25",
+                "direction": "row"
+              },
+              "direction": "row",
+              "splitPercentage": 30.651872399445214
             },
             "second": {
-              "first": "Plot!16go68f",
-              "second": "Plot!od7tg0",
-              "direction": "row"
+              "first": {
+                "first": "Plot!16go68f",
+                "second": "Plot!2t3pdtt",
+                "direction": "column"
+              },
+              "second": {
+                "first": {
+                  "first": "Plot!od7tg0",
+                  "second": "Plot!2d67cqx",
+                  "direction": "column"
+                },
+                "second": {
+                  "first": "Plot!1b2kjjx",
+                  "second": "Plot!1xc8ha3",
+                  "direction": "column"
+                },
+                "direction": "row"
+              },
+              "direction": "row",
+              "splitPercentage": 30.582524271844658
             },
-            "direction": "column"
+            "direction": "column",
+            "splitPercentage": 31.392174704276616
           }
         }
       ]
