@@ -1,0 +1,3 @@
+float32 orientation_ro
+float32 position_x_ro
+float32 position_y_ro

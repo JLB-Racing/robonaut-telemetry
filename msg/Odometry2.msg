@@ -1,0 +1,2 @@
+float32 angular_velocity_z_ro
+float32 linear_velocity_x_ro

@@ -22,6 +22,12 @@
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2/LinearMath/Matrix3x3.h>
 #include <robonaut_telemetry/msg/measurements1.hpp>
+#include <robonaut_telemetry/msg/measurements2.hpp>
+#include <robonaut_telemetry/msg/measurements3.hpp>
+#include <robonaut_telemetry/msg/measurements4.hpp>
+#include <robonaut_telemetry/msg/odometry1.hpp>
+#include <robonaut_telemetry/msg/odometry2.hpp>
+#include <robonaut_telemetry/msg/logic1.hpp>
 
 namespace jlb
 {
@@ -41,6 +47,12 @@ namespace jlb
             udp_timer = create_wall_timer(std::chrono::milliseconds(1), std::bind(&Telemetry::upd_timer_callback, this));
 
             measurements1_publisher = create_publisher<robonaut_telemetry::msg::Measurements1>("measurements1", 10);
+            measurements2_publisher = create_publisher<robonaut_telemetry::msg::Measurements2>("measurements2", 10);
+            measurements3_publisher = create_publisher<robonaut_telemetry::msg::Measurements3>("measurements3", 10);
+            measurements4_publisher = create_publisher<robonaut_telemetry::msg::Measurements4>("measurements4", 10);
+            odometry1_publisher = create_publisher<robonaut_telemetry::msg::Odometry1>("odometry1", 10);
+            odometry2_publisher = create_publisher<robonaut_telemetry::msg::Odometry2>("odometry2", 10);
+            logic1_publisher = create_publisher<robonaut_telemetry::msg::Logic1>("logic1", 10);
         }
         ~Telemetry()
         {
@@ -60,6 +72,12 @@ namespace jlb
         rclcpp::Publisher<geometry_msgs::msg::PoseStamped>::SharedPtr pose_publisher;
 
         rclcpp::Publisher<robonaut_telemetry::msg::Measurements1>::SharedPtr measurements1_publisher;
+        rclcpp::Publisher<robonaut_telemetry::msg::Measurements2>::SharedPtr measurements2_publisher;
+        rclcpp::Publisher<robonaut_telemetry::msg::Measurements3>::SharedPtr measurements3_publisher;
+        rclcpp::Publisher<robonaut_telemetry::msg::Measurements4>::SharedPtr measurements4_publisher;
+        rclcpp::Publisher<robonaut_telemetry::msg::Odometry1>::SharedPtr odometry1_publisher;
+        rclcpp::Publisher<robonaut_telemetry::msg::Odometry2>::SharedPtr odometry2_publisher;
+        rclcpp::Publisher<robonaut_telemetry::msg::Logic1>::SharedPtr logic1_publisher;
 
         rclcpp::TimerBase::SharedPtr map_timer;
         rclcpp::TimerBase::SharedPtr udp_timer;
@@ -236,38 +254,74 @@ namespace jlb
                     measurements1_msg.line_sensor_30 = jlb_rx_t.measurements_1.line_sensor_30;
                     measurements1_msg.line_sensor_31 = jlb_rx_t.measurements_1.line_sensor_31;
                     measurements1_msg.line_sensor_32 = jlb_rx_t.measurements_1.line_sensor_32;
-                    measurements1_msg.angular_velocity_x_ro = jlb_rx_t.measurements_1.angular_velocity_x_ro;
-                    measurements1_msg.angular_velocity_y_ro = jlb_rx_t.measurements_1.angular_velocity_y_ro;
                     measurements1_publisher->publish(measurements1_msg);
                     break;
                 }
                 case measurements_2_CANID:
+                {
+                    robonaut_telemetry::msg::Measurements2 measurements2_msg;
+                    measurements2_msg.angular_velocity_x_ro = jlb_rx_t.measurements_2.angular_velocity_x_ro;
+                    measurements2_msg.angular_velocity_y_ro = jlb_rx_t.measurements_2.angular_velocity_y_ro;
+                    measurements2_msg.angular_velocity_z_ro = jlb_rx_t.measurements_2.angular_velocity_z_ro;
+                    measurements2_publisher->publish(measurements2_msg);
                     break;
+                }
+                case measurements_3_CANID:
+                {
+                    robonaut_telemetry::msg::Measurements3 measurements3_msg;
+                    measurements3_msg.linear_acceleration_x_ro = jlb_rx_t.measurements_3.linear_acceleration_x_ro;
+                    measurements3_msg.linear_acceleration_y_ro = jlb_rx_t.measurements_3.linear_acceleration_y_ro;
+                    measurements3_msg.linear_acceleration_z_ro = jlb_rx_t.measurements_3.linear_acceleration_z_ro;
+                    measurements3_publisher->publish(measurements3_msg);
+                    break;
+                }
+                case measurements_4_CANID:
+                {
+                    robonaut_telemetry::msg::Measurements4 measurements4_msg;
+                    measurements4_msg.motor_rpm_ro = jlb_rx_t.measurements_4.motor_rpm_ro;
+                    measurements4_publisher->publish(measurements4_msg);
+                    break;
+                }
+                case odometry_1_CANID:
+                {
+                    robonaut_telemetry::msg::Odometry1 odometry1_msg;
+                    odometry1_msg.position_x_ro = jlb_rx_t.odometry_1.position_x_ro;
+                    odometry1_msg.position_y_ro = jlb_rx_t.odometry_1.position_y_ro;
+                    odometry1_msg.orientation_ro = jlb_rx_t.odometry_1.orientation_ro;
+                    odometry1_publisher->publish(odometry1_msg);
+
+                    pose_msg.pose.position.x = odometry1_msg.position_x_ro * map_msg.info.resolution;
+                    pose_msg.pose.position.y = odometry1_msg.position_y_ro * map_msg.info.resolution;
+                    tf2::Quaternion q2;
+                    q2.setRPY(0.0, 0.0, odometry1_msg.orientation_ro);
+                    geometry_msgs::msg::Quaternion q2_msg;
+                    q2_msg.x = q2.x();
+                    q2_msg.y = q2.y();
+                    q2_msg.z = q2.z();
+                    q2_msg.w = q2.w();
+                    pose_msg.pose.orientation = q2_msg;
+                    pose_publisher->publish(pose_msg);
+                    break;
+                }
+                case odometry_2_CANID:
+                {
+                    robonaut_telemetry::msg::Odometry2 odometry2_msg;
+                    odometry2_msg.linear_velocity_x_ro = jlb_rx_t.odometry_2.linear_velocity_x_ro;
+                    odometry2_msg.angular_velocity_z_ro = jlb_rx_t.odometry_2.angular_velocity_z_ro;
+                    odometry2_publisher->publish(odometry2_msg);
+                    break;
+                }
+                case logic_1_CANID:
+                {
+                    robonaut_telemetry::msg::Logic1 logic1_msg;
+                    logic1_msg.target_speed_ro = jlb_rx_t.logic_1.target_speed_ro;
+                    logic1_msg.target_angle_ro = jlb_rx_t.logic_1.target_angle_ro;
+                    logic1_publisher->publish(logic1_msg);
+                    break;
+                }
                 default:
                     break;
                 }
-
-                // if (value.signal.name == "position_x")
-                // {
-                //     pose_msg.pose.position.x = value.value * map_msg.info.resolution;
-                //     pose_publisher->publish(pose_msg);
-                // }
-                // else if (value.signal.name == "position_y")
-                // {
-                //     pose_msg.pose.position.y = value.value * map_msg.info.resolution;
-                //     pose_publisher->publish(pose_msg);
-                // }
-                // else if (value.signal.name == "position_theta")
-                // {
-                //     tf2::Quaternion q2;
-                //     q2.setRPY(0.0, 0.0, value.value);
-                //     geometry_msgs::msg::Quaternion q2_msg;
-                //     q2_msg.x = q2.x();
-                //     q2_msg.y = q2.y();
-                //     q2_msg.z = q2.z();
-                //     q2_msg.w = q2.w();
-                //     pose_msg.pose.orientation = q2_msg;
-                // }
             }
         }
     };

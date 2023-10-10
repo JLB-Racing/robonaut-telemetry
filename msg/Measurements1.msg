@@ -30,5 +30,3 @@ uint8 line_sensor_29
 uint8 line_sensor_30
 uint8 line_sensor_31
 uint8 line_sensor_32
-float32 angular_velocity_x_ro
-float32 angular_velocity_y_ro
