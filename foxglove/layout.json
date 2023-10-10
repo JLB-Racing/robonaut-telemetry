@@ -11,13 +11,14 @@
       ],
       "showXAxisLabels": true,
       "showYAxisLabels": true,
-      "showLegend": true,
+      "showLegend": false,
       "legendDisplay": "floating",
-      "showPlotValuesInLegend": true,
+      "showPlotValuesInLegend": false,
       "isSynced": true,
       "xAxisVal": "timestamp",
       "sidebarDimension": 240,
-      "followingViewWidth": 10
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "target_angle"
     },
     "Plot!o2jkhq": {
       "paths": [
@@ -29,13 +30,14 @@
       ],
       "showXAxisLabels": true,
       "showYAxisLabels": true,
-      "showLegend": true,
+      "showLegend": false,
       "legendDisplay": "floating",
-      "showPlotValuesInLegend": true,
+      "showPlotValuesInLegend": false,
       "isSynced": true,
       "xAxisVal": "timestamp",
       "sidebarDimension": 240,
-      "followingViewWidth": 10
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "target_speed"
     },
     "3D!p53tpv": {
       "cameraState": {
@@ -1136,13 +1138,14 @@
       ],
       "showXAxisLabels": true,
       "showYAxisLabels": true,
-      "showLegend": true,
+      "showLegend": false,
       "legendDisplay": "floating",
       "showPlotValuesInLegend": false,
       "isSynced": true,
       "xAxisVal": "timestamp",
       "sidebarDimension": 240,
-      "followingViewWidth": 10
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "angular_velocity_x"
     },
     "Plot!1am6leu": {
       "paths": [
@@ -1154,13 +1157,14 @@
       ],
       "showXAxisLabels": true,
       "showYAxisLabels": true,
-      "showLegend": true,
+      "showLegend": false,
       "legendDisplay": "floating",
       "showPlotValuesInLegend": false,
       "isSynced": true,
       "xAxisVal": "timestamp",
       "sidebarDimension": 240,
-      "followingViewWidth": 10
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "angular_velocity_y"
     },
     "Plot!3exng25": {
       "paths": [
@@ -1172,13 +1176,14 @@
       ],
       "showXAxisLabels": true,
       "showYAxisLabels": true,
-      "showLegend": true,
+      "showLegend": false,
       "legendDisplay": "floating",
       "showPlotValuesInLegend": false,
       "isSynced": true,
       "xAxisVal": "timestamp",
       "sidebarDimension": 240,
-      "followingViewWidth": 10
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "angular_velocity_z"
     },
     "Plot!16go68f": {
       "paths": [
@@ -1190,13 +1195,14 @@
       ],
       "showXAxisLabels": true,
       "showYAxisLabels": true,
-      "showLegend": true,
+      "showLegend": false,
       "legendDisplay": "floating",
       "showPlotValuesInLegend": false,
       "isSynced": true,
       "xAxisVal": "timestamp",
       "sidebarDimension": 240,
-      "followingViewWidth": 10
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "linear_acceleration_x"
     },
     "Plot!2t3pdtt": {
       "paths": [
@@ -1208,13 +1214,14 @@
       ],
       "showXAxisLabels": true,
       "showYAxisLabels": true,
-      "showLegend": true,
+      "showLegend": false,
       "legendDisplay": "floating",
       "showPlotValuesInLegend": false,
       "isSynced": true,
       "xAxisVal": "timestamp",
       "sidebarDimension": 240,
-      "followingViewWidth": 10
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "odom/linear_velocity_x"
     },
     "Plot!od7tg0": {
       "paths": [
@@ -1226,13 +1233,14 @@
       ],
       "showXAxisLabels": true,
       "showYAxisLabels": true,
-      "showLegend": true,
+      "showLegend": false,
       "legendDisplay": "floating",
       "showPlotValuesInLegend": false,
       "isSynced": true,
       "xAxisVal": "timestamp",
       "sidebarDimension": 240,
-      "followingViewWidth": 10
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "linear_acceleration_y"
     },
     "Plot!2d67cqx": {
       "paths": [
@@ -1244,13 +1252,14 @@
       ],
       "showXAxisLabels": true,
       "showYAxisLabels": true,
-      "showLegend": true,
+      "showLegend": false,
       "legendDisplay": "floating",
       "showPlotValuesInLegend": false,
       "isSynced": true,
       "xAxisVal": "timestamp",
       "sidebarDimension": 240,
-      "followingViewWidth": 10
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "motor_rpm"
     },
     "Plot!1b2kjjx": {
       "paths": [
@@ -1262,13 +1271,14 @@
       ],
       "showXAxisLabels": true,
       "showYAxisLabels": true,
-      "showLegend": true,
+      "showLegend": false,
       "legendDisplay": "floating",
       "showPlotValuesInLegend": false,
       "isSynced": true,
       "xAxisVal": "timestamp",
       "sidebarDimension": 240,
-      "followingViewWidth": 10
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "linear_acceleration_z"
     },
     "Plot!1xc8ha3": {
       "paths": [
@@ -1280,16 +1290,17 @@
       ],
       "showXAxisLabels": true,
       "showYAxisLabels": true,
-      "showLegend": true,
+      "showLegend": false,
       "legendDisplay": "floating",
       "showPlotValuesInLegend": false,
       "isSynced": true,
       "xAxisVal": "timestamp",
       "sidebarDimension": 240,
-      "followingViewWidth": 10
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "odom/angular_velocity_z"
     },
     "Tab!3styih1": {
-      "activeTabIdx": 1,
+      "activeTabIdx": 0,
       "tabs": [
         {
           "title": "logic",
