@@ -1,3 +1,3 @@
-float32 angular_velocity_x_ro
-float32 angular_velocity_y_ro
-float32 angular_velocity_z_ro
+float32 angular_velocity_x
+float32 angular_velocity_y
+float32 angular_velocity_z

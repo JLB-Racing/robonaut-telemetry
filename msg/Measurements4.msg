@@ -1,1 +1,1 @@
-float32 motor_rpm_ro
+float32 motor_rpm

@@ -260,40 +260,40 @@ namespace jlb
                 case measurements_2_CANID:
                 {
                     robonaut_telemetry::msg::Measurements2 measurements2_msg;
-                    measurements2_msg.angular_velocity_x_ro = jlb_rx_t.measurements_2.angular_velocity_x_ro;
-                    measurements2_msg.angular_velocity_y_ro = jlb_rx_t.measurements_2.angular_velocity_y_ro;
-                    measurements2_msg.angular_velocity_z_ro = jlb_rx_t.measurements_2.angular_velocity_z_ro;
+                    measurements2_msg.angular_velocity_x = jlb_rx_t.measurements_2.angular_velocity_x_phys;
+                    measurements2_msg.angular_velocity_y = jlb_rx_t.measurements_2.angular_velocity_y_phys;
+                    measurements2_msg.angular_velocity_z = jlb_rx_t.measurements_2.angular_velocity_z_phys;
                     measurements2_publisher->publish(measurements2_msg);
                     break;
                 }
                 case measurements_3_CANID:
                 {
                     robonaut_telemetry::msg::Measurements3 measurements3_msg;
-                    measurements3_msg.linear_acceleration_x_ro = jlb_rx_t.measurements_3.linear_acceleration_x_ro;
-                    measurements3_msg.linear_acceleration_y_ro = jlb_rx_t.measurements_3.linear_acceleration_y_ro;
-                    measurements3_msg.linear_acceleration_z_ro = jlb_rx_t.measurements_3.linear_acceleration_z_ro;
+                    measurements3_msg.linear_acceleration_x = jlb_rx_t.measurements_3.linear_acceleration_x_phys;
+                    measurements3_msg.linear_acceleration_y = jlb_rx_t.measurements_3.linear_acceleration_y_phys;
+                    measurements3_msg.linear_acceleration_z = jlb_rx_t.measurements_3.linear_acceleration_z_phys;
                     measurements3_publisher->publish(measurements3_msg);
                     break;
                 }
                 case measurements_4_CANID:
                 {
                     robonaut_telemetry::msg::Measurements4 measurements4_msg;
-                    measurements4_msg.motor_rpm_ro = jlb_rx_t.measurements_4.motor_rpm_ro;
+                    measurements4_msg.motor_rpm = jlb_rx_t.measurements_4.motor_rpm_phys;
                     measurements4_publisher->publish(measurements4_msg);
                     break;
                 }
                 case odometry_1_CANID:
                 {
                     robonaut_telemetry::msg::Odometry1 odometry1_msg;
-                    odometry1_msg.position_x_ro = jlb_rx_t.odometry_1.position_x_ro;
-                    odometry1_msg.position_y_ro = jlb_rx_t.odometry_1.position_y_ro;
-                    odometry1_msg.orientation_ro = jlb_rx_t.odometry_1.orientation_ro;
+                    odometry1_msg.position_x = jlb_rx_t.odometry_1.position_x_phys;
+                    odometry1_msg.position_y = jlb_rx_t.odometry_1.position_y_phys;
+                    odometry1_msg.orientation = jlb_rx_t.odometry_1.orientation_phys;
                     odometry1_publisher->publish(odometry1_msg);
 
-                    pose_msg.pose.position.x = odometry1_msg.position_x_ro * map_msg.info.resolution;
-                    pose_msg.pose.position.y = odometry1_msg.position_y_ro * map_msg.info.resolution;
+                    pose_msg.pose.position.x = odometry1_msg.position_x * map_msg.info.resolution;
+                    pose_msg.pose.position.y = odometry1_msg.position_y * map_msg.info.resolution;
                     tf2::Quaternion q2;
-                    q2.setRPY(0.0, 0.0, odometry1_msg.orientation_ro);
+                    q2.setRPY(0.0, 0.0, odometry1_msg.orientation);
                     geometry_msgs::msg::Quaternion q2_msg;
                     q2_msg.x = q2.x();
                     q2_msg.y = q2.y();
@@ -306,16 +306,16 @@ namespace jlb
                 case odometry_2_CANID:
                 {
                     robonaut_telemetry::msg::Odometry2 odometry2_msg;
-                    odometry2_msg.linear_velocity_x_ro = jlb_rx_t.odometry_2.linear_velocity_x_ro;
-                    odometry2_msg.angular_velocity_z_ro = jlb_rx_t.odometry_2.angular_velocity_z_ro;
+                    odometry2_msg.linear_velocity_x = jlb_rx_t.odometry_2.linear_velocity_x_phys;
+                    odometry2_msg.angular_velocity_z = jlb_rx_t.odometry_2.angular_velocity_z_phys;
                     odometry2_publisher->publish(odometry2_msg);
                     break;
                 }
                 case logic_1_CANID:
                 {
                     robonaut_telemetry::msg::Logic1 logic1_msg;
-                    logic1_msg.target_speed_ro = jlb_rx_t.logic_1.target_speed_ro;
-                    logic1_msg.target_angle_ro = jlb_rx_t.logic_1.target_angle_ro;
+                    logic1_msg.target_speed = jlb_rx_t.logic_1.target_speed_phys;
+                    logic1_msg.target_angle = jlb_rx_t.logic_1.target_angle_phys;
                     logic1_publisher->publish(logic1_msg);
                     break;
                 }
