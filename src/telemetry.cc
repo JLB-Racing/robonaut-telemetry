@@ -120,7 +120,7 @@ namespace jlb
             map_msg.header.frame_id = "map";
             map_msg.info.width = map_width;
             map_msg.info.height = map_height;
-            map_msg.info.resolution = 1.0 / 64.0;
+            map_msg.info.resolution = px_to_m(1.0);
             map_msg.info.origin.position.x = 0.0;
             map_msg.info.origin.position.y = 0.0;
             map_msg.info.origin.position.z = 0.0;
@@ -290,8 +290,8 @@ namespace jlb
                     odometry1_msg.orientation = jlb_rx_t.odometry_1.orientation_phys;
                     odometry1_publisher->publish(odometry1_msg);
 
-                    pose_msg.pose.position.x = odometry1_msg.position_x * map_msg.info.resolution;
-                    pose_msg.pose.position.y = odometry1_msg.position_y * map_msg.info.resolution;
+                    pose_msg.pose.position.x = odometry1_msg.position_x;
+                    pose_msg.pose.position.y = odometry1_msg.position_y;
                     tf2::Quaternion q2;
                     q2.setRPY(0.0, 0.0, odometry1_msg.orientation);
                     geometry_msgs::msg::Quaternion q2_msg;
