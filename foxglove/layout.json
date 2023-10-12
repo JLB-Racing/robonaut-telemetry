@@ -41,18 +41,19 @@
     },
     "3D!p53tpv": {
       "cameraState": {
-        "distance": 7.5,
         "perspective": false,
+        "distance": 4.266142541836421,
         "phi": 0.3368206285414249,
+        "thetaOffset": 90.00000000016554,
+        "targetOffset": [
+          0,
+          0,
+          -1.427958819499086e-18
+        ],
         "target": [
           0,
           0,
           0
-        ],
-        "targetOffset": [
-          0,
-          0,
-          -2.6230473919300266e-18
         ],
         "targetOrientation": [
           0,
@@ -60,7 +61,6 @@
           0,
           1
         ],
-        "thetaOffset": 90,
         "fovy": 40,
         "near": 0,
         "far": 5000
@@ -102,7 +102,8 @@
         "poseEstimateThetaDeviation": 0.26179939
       },
       "imageMode": {},
-      "followTf": "map_transformed"
+      "followTf": "map_transformed",
+      "foxglovePanelTitle": "map"
     },
     "Indicator!1uszlyr": {
       "path": "/measurements1.line_sensor_1",
@@ -1439,7 +1440,7 @@
                 "direction": "row"
               },
               "direction": "column",
-              "splitPercentage": 81.50531053975054
+              "splitPercentage": 83.57799125512332
             },
             "direction": "column",
             "splitPercentage": 42.92929292929293

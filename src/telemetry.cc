@@ -161,8 +161,8 @@ namespace jlb
             transform.child_frame_id = "map_transformed"; // Target frame (map_transformed)
 
             // Apply the y-axis mirroring transformation
-            transform.transform.translation.x = 8.0;
-            transform.transform.translation.y = 8.0;
+            transform.transform.translation.x = 4.8;
+            transform.transform.translation.y = 4.8;
             transform.transform.translation.z = 0.0;
             tf2::Quaternion q2;
             q2.setRPY(M_PI, 0.0, -M_PI / 2.0);
