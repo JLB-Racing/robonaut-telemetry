@@ -29,9 +29,9 @@ find_package(sensor_msgs REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Measurements1.msg"
-  "msg/Measurements2.msg"
   "msg/Measurements3.msg"
   "msg/Measurements4.msg"
+  "msg/Measurements5.msg"
   "msg/Odometry1.msg"
   "msg/Odometry2.msg"
   "msg/Logic1.msg"
