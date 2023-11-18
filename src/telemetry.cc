@@ -220,155 +220,312 @@ namespace jlb
         void upd_timer_callback()
         {
             char data[1500] = {0};
+            auto bytes_received = server.recv(data, sizeof(data));
 
-            if (server.recv(data, sizeof(data)) > 0)
+            if (bytes_received > 0)
             {
-                uint32_t can_id = data[0];
-                uint8_t dlc = data[1];
-                uint32_t received_id = jlb_Receive(&jlb_rx_t, reinterpret_cast<uint8_t *>(data + 2), can_id, dlc);
+                //     uint32_t can_id = data[0];
+                //     uint8_t dlc = data[1];
+                //     uint32_t received_id = jlb_Receive(&jlb_rx_t, reinterpret_cast<uint8_t *>(data + 2), can_id, dlc);
 
-                switch (received_id)
-                {
-                case measurements_1_CANID:
-                {
-                    robonaut_telemetry::msg::Measurements1 measurements1_msg;
-                    measurements1_msg.line_sensor_1 = jlb_rx_t.measurements_1.line_sensor_1;
-                    measurements1_msg.line_sensor_2 = jlb_rx_t.measurements_1.line_sensor_2;
-                    measurements1_msg.line_sensor_3 = jlb_rx_t.measurements_1.line_sensor_3;
-                    measurements1_msg.line_sensor_4 = jlb_rx_t.measurements_1.line_sensor_4;
-                    measurements1_msg.line_sensor_5 = jlb_rx_t.measurements_1.line_sensor_5;
-                    measurements1_msg.line_sensor_6 = jlb_rx_t.measurements_1.line_sensor_6;
-                    measurements1_msg.line_sensor_7 = jlb_rx_t.measurements_1.line_sensor_7;
-                    measurements1_msg.line_sensor_8 = jlb_rx_t.measurements_1.line_sensor_8;
-                    measurements1_msg.line_sensor_9 = jlb_rx_t.measurements_1.line_sensor_9;
-                    measurements1_msg.line_sensor_10 = jlb_rx_t.measurements_1.line_sensor_10;
-                    measurements1_msg.line_sensor_11 = jlb_rx_t.measurements_1.line_sensor_11;
-                    measurements1_msg.line_sensor_12 = jlb_rx_t.measurements_1.line_sensor_12;
-                    measurements1_msg.line_sensor_13 = jlb_rx_t.measurements_1.line_sensor_13;
-                    measurements1_msg.line_sensor_14 = jlb_rx_t.measurements_1.line_sensor_14;
-                    measurements1_msg.line_sensor_15 = jlb_rx_t.measurements_1.line_sensor_15;
-                    measurements1_msg.line_sensor_16 = jlb_rx_t.measurements_1.line_sensor_16;
-                    measurements1_msg.line_sensor_17 = jlb_rx_t.measurements_1.line_sensor_17;
-                    measurements1_msg.line_sensor_18 = jlb_rx_t.measurements_1.line_sensor_18;
-                    measurements1_msg.line_sensor_19 = jlb_rx_t.measurements_1.line_sensor_19;
-                    measurements1_msg.line_sensor_20 = jlb_rx_t.measurements_1.line_sensor_20;
-                    measurements1_msg.line_sensor_21 = jlb_rx_t.measurements_1.line_sensor_21;
-                    measurements1_msg.line_sensor_22 = jlb_rx_t.measurements_1.line_sensor_22;
-                    measurements1_msg.line_sensor_23 = jlb_rx_t.measurements_1.line_sensor_23;
-                    measurements1_msg.line_sensor_24 = jlb_rx_t.measurements_1.line_sensor_24;
-                    measurements1_msg.line_sensor_25 = jlb_rx_t.measurements_1.line_sensor_25;
-                    measurements1_msg.line_sensor_26 = jlb_rx_t.measurements_1.line_sensor_26;
-                    measurements1_msg.line_sensor_27 = jlb_rx_t.measurements_1.line_sensor_27;
-                    measurements1_msg.line_sensor_28 = jlb_rx_t.measurements_1.line_sensor_28;
-                    measurements1_msg.line_sensor_29 = jlb_rx_t.measurements_1.line_sensor_29;
-                    measurements1_msg.line_sensor_30 = jlb_rx_t.measurements_1.line_sensor_30;
-                    measurements1_msg.line_sensor_31 = jlb_rx_t.measurements_1.line_sensor_31;
-                    measurements1_msg.line_sensor_32 = jlb_rx_t.measurements_1.line_sensor_32;
-                    measurements1_publisher->publish(measurements1_msg);
-                    break;
-                }
-                case measurements_2_CANID:
-                {
-                    robonaut_telemetry::msg::Measurements2 measurements2_msg;
-                    measurements2_msg.line_sensor_1 = jlb_rx_t.measurements_2.line_sensor_1;
-                    measurements2_msg.line_sensor_2 = jlb_rx_t.measurements_2.line_sensor_2;
-                    measurements2_msg.line_sensor_3 = jlb_rx_t.measurements_2.line_sensor_3;
-                    measurements2_msg.line_sensor_4 = jlb_rx_t.measurements_2.line_sensor_4;
-                    measurements2_msg.line_sensor_5 = jlb_rx_t.measurements_2.line_sensor_5;
-                    measurements2_msg.line_sensor_6 = jlb_rx_t.measurements_2.line_sensor_6;
-                    measurements2_msg.line_sensor_7 = jlb_rx_t.measurements_2.line_sensor_7;
-                    measurements2_msg.line_sensor_8 = jlb_rx_t.measurements_2.line_sensor_8;
-                    measurements2_msg.line_sensor_9 = jlb_rx_t.measurements_2.line_sensor_9;
-                    measurements2_msg.line_sensor_10 = jlb_rx_t.measurements_2.line_sensor_10;
-                    measurements2_msg.line_sensor_11 = jlb_rx_t.measurements_2.line_sensor_11;
-                    measurements2_msg.line_sensor_12 = jlb_rx_t.measurements_2.line_sensor_12;
-                    measurements2_msg.line_sensor_13 = jlb_rx_t.measurements_2.line_sensor_13;
-                    measurements2_msg.line_sensor_14 = jlb_rx_t.measurements_2.line_sensor_14;
-                    measurements2_msg.line_sensor_15 = jlb_rx_t.measurements_2.line_sensor_15;
-                    measurements2_msg.line_sensor_16 = jlb_rx_t.measurements_2.line_sensor_16;
-                    measurements2_msg.line_sensor_17 = jlb_rx_t.measurements_2.line_sensor_17;
-                    measurements2_msg.line_sensor_18 = jlb_rx_t.measurements_2.line_sensor_18;
-                    measurements2_msg.line_sensor_19 = jlb_rx_t.measurements_2.line_sensor_19;
-                    measurements2_msg.line_sensor_20 = jlb_rx_t.measurements_2.line_sensor_20;
-                    measurements2_msg.line_sensor_21 = jlb_rx_t.measurements_2.line_sensor_21;
-                    measurements2_msg.line_sensor_22 = jlb_rx_t.measurements_2.line_sensor_22;
-                    measurements2_msg.line_sensor_23 = jlb_rx_t.measurements_2.line_sensor_23;
-                    measurements2_msg.line_sensor_24 = jlb_rx_t.measurements_2.line_sensor_24;
-                    measurements2_msg.line_sensor_25 = jlb_rx_t.measurements_2.line_sensor_25;
-                    measurements2_msg.line_sensor_26 = jlb_rx_t.measurements_2.line_sensor_26;
-                    measurements2_msg.line_sensor_27 = jlb_rx_t.measurements_2.line_sensor_27;
-                    measurements2_msg.line_sensor_28 = jlb_rx_t.measurements_2.line_sensor_28;
-                    measurements2_msg.line_sensor_29 = jlb_rx_t.measurements_2.line_sensor_29;
-                    measurements2_msg.line_sensor_30 = jlb_rx_t.measurements_2.line_sensor_30;
-                    measurements2_msg.line_sensor_31 = jlb_rx_t.measurements_2.line_sensor_31;
-                    measurements2_msg.line_sensor_32 = jlb_rx_t.measurements_2.line_sensor_32;
-                    measurements2_publisher->publish(measurements2_msg);
-                    break;
-                }
-                case measurements_3_CANID:
-                {
-                    robonaut_telemetry::msg::Measurements3 measurements3_msg;
-                    measurements3_msg.angular_velocity_x = jlb_rx_t.measurements_3.angular_velocity_x_phys;
-                    measurements3_msg.angular_velocity_y = jlb_rx_t.measurements_3.angular_velocity_y_phys;
-                    measurements3_msg.angular_velocity_z = jlb_rx_t.measurements_3.angular_velocity_z_phys;
-                    measurements3_publisher->publish(measurements3_msg);
-                    break;
-                }
-                case measurements_4_CANID:
-                {
-                    robonaut_telemetry::msg::Measurements4 measurements4_msg;
-                    measurements4_msg.linear_acceleration_x = jlb_rx_t.measurements_4.linear_acceleration_x_phys;
-                    measurements4_msg.linear_acceleration_y = jlb_rx_t.measurements_4.linear_acceleration_y_phys;
-                    measurements4_msg.linear_acceleration_z = jlb_rx_t.measurements_4.linear_acceleration_z_phys;
-                    measurements4_publisher->publish(measurements4_msg);
-                    break;
-                }
-                case measurements_5_CANID:
-                {
-                    robonaut_telemetry::msg::Measurements5 measurements5_msg;
-                    measurements5_msg.motor_rpm = jlb_rx_t.measurements_5.motor_rpm_phys;
-                    measurements5_publisher->publish(measurements5_msg);
-                    break;
-                }
-                case odometry_1_CANID:
-                {
-                    robonaut_telemetry::msg::Odometry1 odometry1_msg;
-                    odometry1_msg.position_x = jlb_rx_t.odometry_1.position_x_phys;
-                    odometry1_msg.position_y = jlb_rx_t.odometry_1.position_y_phys;
-                    odometry1_msg.orientation = jlb_rx_t.odometry_1.orientation_phys;
-                    odometry1_publisher->publish(odometry1_msg);
+                //     switch (received_id)
+                //     {
+                //     case measurements_1_CANID:
+                //     {
+                //         robonaut_telemetry::msg::Measurements1 measurements1_msg;
+                //         measurements1_msg.line_sensor_1 = jlb_rx_t.measurements_1.line_sensor_1;
+                //         measurements1_msg.line_sensor_2 = jlb_rx_t.measurements_1.line_sensor_2;
+                //         measurements1_msg.line_sensor_3 = jlb_rx_t.measurements_1.line_sensor_3;
+                //         measurements1_msg.line_sensor_4 = jlb_rx_t.measurements_1.line_sensor_4;
+                //         measurements1_msg.line_sensor_5 = jlb_rx_t.measurements_1.line_sensor_5;
+                //         measurements1_msg.line_sensor_6 = jlb_rx_t.measurements_1.line_sensor_6;
+                //         measurements1_msg.line_sensor_7 = jlb_rx_t.measurements_1.line_sensor_7;
+                //         measurements1_msg.line_sensor_8 = jlb_rx_t.measurements_1.line_sensor_8;
+                //         measurements1_msg.line_sensor_9 = jlb_rx_t.measurements_1.line_sensor_9;
+                //         measurements1_msg.line_sensor_10 = jlb_rx_t.measurements_1.line_sensor_10;
+                //         measurements1_msg.line_sensor_11 = jlb_rx_t.measurements_1.line_sensor_11;
+                //         measurements1_msg.line_sensor_12 = jlb_rx_t.measurements_1.line_sensor_12;
+                //         measurements1_msg.line_sensor_13 = jlb_rx_t.measurements_1.line_sensor_13;
+                //         measurements1_msg.line_sensor_14 = jlb_rx_t.measurements_1.line_sensor_14;
+                //         measurements1_msg.line_sensor_15 = jlb_rx_t.measurements_1.line_sensor_15;
+                //         measurements1_msg.line_sensor_16 = jlb_rx_t.measurements_1.line_sensor_16;
+                //         measurements1_msg.line_sensor_17 = jlb_rx_t.measurements_1.line_sensor_17;
+                //         measurements1_msg.line_sensor_18 = jlb_rx_t.measurements_1.line_sensor_18;
+                //         measurements1_msg.line_sensor_19 = jlb_rx_t.measurements_1.line_sensor_19;
+                //         measurements1_msg.line_sensor_20 = jlb_rx_t.measurements_1.line_sensor_20;
+                //         measurements1_msg.line_sensor_21 = jlb_rx_t.measurements_1.line_sensor_21;
+                //         measurements1_msg.line_sensor_22 = jlb_rx_t.measurements_1.line_sensor_22;
+                //         measurements1_msg.line_sensor_23 = jlb_rx_t.measurements_1.line_sensor_23;
+                //         measurements1_msg.line_sensor_24 = jlb_rx_t.measurements_1.line_sensor_24;
+                //         measurements1_msg.line_sensor_25 = jlb_rx_t.measurements_1.line_sensor_25;
+                //         measurements1_msg.line_sensor_26 = jlb_rx_t.measurements_1.line_sensor_26;
+                //         measurements1_msg.line_sensor_27 = jlb_rx_t.measurements_1.line_sensor_27;
+                //         measurements1_msg.line_sensor_28 = jlb_rx_t.measurements_1.line_sensor_28;
+                //         measurements1_msg.line_sensor_29 = jlb_rx_t.measurements_1.line_sensor_29;
+                //         measurements1_msg.line_sensor_30 = jlb_rx_t.measurements_1.line_sensor_30;
+                //         measurements1_msg.line_sensor_31 = jlb_rx_t.measurements_1.line_sensor_31;
+                //         measurements1_msg.line_sensor_32 = jlb_rx_t.measurements_1.line_sensor_32;
+                //         measurements1_publisher->publish(measurements1_msg);
+                //         break;
+                //     }
+                //     case measurements_2_CANID:
+                //     {
+                //         robonaut_telemetry::msg::Measurements2 measurements2_msg;
+                //         measurements2_msg.line_sensor_1 = jlb_rx_t.measurements_2.line_sensor_1;
+                //         measurements2_msg.line_sensor_2 = jlb_rx_t.measurements_2.line_sensor_2;
+                //         measurements2_msg.line_sensor_3 = jlb_rx_t.measurements_2.line_sensor_3;
+                //         measurements2_msg.line_sensor_4 = jlb_rx_t.measurements_2.line_sensor_4;
+                //         measurements2_msg.line_sensor_5 = jlb_rx_t.measurements_2.line_sensor_5;
+                //         measurements2_msg.line_sensor_6 = jlb_rx_t.measurements_2.line_sensor_6;
+                //         measurements2_msg.line_sensor_7 = jlb_rx_t.measurements_2.line_sensor_7;
+                //         measurements2_msg.line_sensor_8 = jlb_rx_t.measurements_2.line_sensor_8;
+                //         measurements2_msg.line_sensor_9 = jlb_rx_t.measurements_2.line_sensor_9;
+                //         measurements2_msg.line_sensor_10 = jlb_rx_t.measurements_2.line_sensor_10;
+                //         measurements2_msg.line_sensor_11 = jlb_rx_t.measurements_2.line_sensor_11;
+                //         measurements2_msg.line_sensor_12 = jlb_rx_t.measurements_2.line_sensor_12;
+                //         measurements2_msg.line_sensor_13 = jlb_rx_t.measurements_2.line_sensor_13;
+                //         measurements2_msg.line_sensor_14 = jlb_rx_t.measurements_2.line_sensor_14;
+                //         measurements2_msg.line_sensor_15 = jlb_rx_t.measurements_2.line_sensor_15;
+                //         measurements2_msg.line_sensor_16 = jlb_rx_t.measurements_2.line_sensor_16;
+                //         measurements2_msg.line_sensor_17 = jlb_rx_t.measurements_2.line_sensor_17;
+                //         measurements2_msg.line_sensor_18 = jlb_rx_t.measurements_2.line_sensor_18;
+                //         measurements2_msg.line_sensor_19 = jlb_rx_t.measurements_2.line_sensor_19;
+                //         measurements2_msg.line_sensor_20 = jlb_rx_t.measurements_2.line_sensor_20;
+                //         measurements2_msg.line_sensor_21 = jlb_rx_t.measurements_2.line_sensor_21;
+                //         measurements2_msg.line_sensor_22 = jlb_rx_t.measurements_2.line_sensor_22;
+                //         measurements2_msg.line_sensor_23 = jlb_rx_t.measurements_2.line_sensor_23;
+                //         measurements2_msg.line_sensor_24 = jlb_rx_t.measurements_2.line_sensor_24;
+                //         measurements2_msg.line_sensor_25 = jlb_rx_t.measurements_2.line_sensor_25;
+                //         measurements2_msg.line_sensor_26 = jlb_rx_t.measurements_2.line_sensor_26;
+                //         measurements2_msg.line_sensor_27 = jlb_rx_t.measurements_2.line_sensor_27;
+                //         measurements2_msg.line_sensor_28 = jlb_rx_t.measurements_2.line_sensor_28;
+                //         measurements2_msg.line_sensor_29 = jlb_rx_t.measurements_2.line_sensor_29;
+                //         measurements2_msg.line_sensor_30 = jlb_rx_t.measurements_2.line_sensor_30;
+                //         measurements2_msg.line_sensor_31 = jlb_rx_t.measurements_2.line_sensor_31;
+                //         measurements2_msg.line_sensor_32 = jlb_rx_t.measurements_2.line_sensor_32;
+                //         measurements2_publisher->publish(measurements2_msg);
+                //         break;
+                //     }
+                //     case measurements_3_CANID:
+                //     {
+                //         robonaut_telemetry::msg::Measurements3 measurements3_msg;
+                //         measurements3_msg.angular_velocity_x = jlb_rx_t.measurements_3.angular_velocity_x_phys;
+                //         measurements3_msg.angular_velocity_y = jlb_rx_t.measurements_3.angular_velocity_y_phys;
+                //         measurements3_msg.angular_velocity_z = jlb_rx_t.measurements_3.angular_velocity_z_phys;
+                //         measurements3_publisher->publish(measurements3_msg);
+                //         break;
+                //     }
+                //     case measurements_4_CANID:
+                //     {
+                //         robonaut_telemetry::msg::Measurements4 measurements4_msg;
+                //         measurements4_msg.linear_acceleration_x = jlb_rx_t.measurements_4.linear_acceleration_x_phys;
+                //         measurements4_msg.linear_acceleration_y = jlb_rx_t.measurements_4.linear_acceleration_y_phys;
+                //         measurements4_msg.linear_acceleration_z = jlb_rx_t.measurements_4.linear_acceleration_z_phys;
+                //         measurements4_publisher->publish(measurements4_msg);
+                //         break;
+                //     }
+                //     case measurements_5_CANID:
+                //     {
+                //         robonaut_telemetry::msg::Measurements5 measurements5_msg;
+                //         measurements5_msg.motor_rpm = jlb_rx_t.measurements_5.motor_rpm_phys;
+                //         measurements5_publisher->publish(measurements5_msg);
+                //         break;
+                //     }
+                //     case odometry_1_CANID:
+                //     {
+                //         robonaut_telemetry::msg::Odometry1 odometry1_msg;
+                //         odometry1_msg.position_x = jlb_rx_t.odometry_1.position_x_phys;
+                //         odometry1_msg.position_y = jlb_rx_t.odometry_1.position_y_phys;
+                //         odometry1_msg.orientation = jlb_rx_t.odometry_1.orientation_phys;
+                //         odometry1_publisher->publish(odometry1_msg);
 
-                    pose_msg.pose.position.x = odometry1_msg.position_x;
-                    pose_msg.pose.position.y = odometry1_msg.position_y;
-                    tf2::Quaternion q2;
-                    q2.setRPY(0.0, 0.0, odometry1_msg.orientation);
-                    geometry_msgs::msg::Quaternion q2_msg;
-                    q2_msg.x = q2.x();
-                    q2_msg.y = q2.y();
-                    q2_msg.z = q2.z();
-                    q2_msg.w = q2.w();
-                    pose_msg.pose.orientation = q2_msg;
-                    pose_publisher->publish(pose_msg);
-                    break;
-                }
-                case odometry_2_CANID:
+                //         pose_msg.pose.position.x = odometry1_msg.position_x;
+                //         pose_msg.pose.position.y = odometry1_msg.position_y;
+                //         tf2::Quaternion q2;
+                //         q2.setRPY(0.0, 0.0, odometry1_msg.orientation);
+                //         geometry_msgs::msg::Quaternion q2_msg;
+                //         q2_msg.x = q2.x();
+                //         q2_msg.y = q2.y();
+                //         q2_msg.z = q2.z();
+                //         q2_msg.w = q2.w();
+                //         pose_msg.pose.orientation = q2_msg;
+                //         pose_publisher->publish(pose_msg);
+                //         break;
+                //     }
+                //     case odometry_2_CANID:
+                //     {
+                //         robonaut_telemetry::msg::Odometry2 odometry2_msg;
+                //         odometry2_msg.linear_velocity_x = jlb_rx_t.odometry_2.linear_velocity_x_phys;
+                //         odometry2_msg.angular_velocity_z = jlb_rx_t.odometry_2.angular_velocity_z_phys;
+                //         odometry2_publisher->publish(odometry2_msg);
+                //         break;
+                //     }
+                //     case logic_1_CANID:
+                //     {
+                //         robonaut_telemetry::msg::Logic1 logic1_msg;
+                //         logic1_msg.target_speed = jlb_rx_t.logic_1.target_speed_phys;
+                //         logic1_msg.target_angle = jlb_rx_t.logic_1.target_angle_phys;
+                //         logic1_publisher->publish(logic1_msg);
+                //         break;
+                //     }
+                //     default:
+                //         break;
+                //     }
+                // }
+
+                // I have aggregated all the messages into one, so that we can send them all at once, loop through them on the other side
+
+                auto idx = 0;
+                while (idx < bytes_received)
                 {
-                    robonaut_telemetry::msg::Odometry2 odometry2_msg;
-                    odometry2_msg.linear_velocity_x = jlb_rx_t.odometry_2.linear_velocity_x_phys;
-                    odometry2_msg.angular_velocity_z = jlb_rx_t.odometry_2.angular_velocity_z_phys;
-                    odometry2_publisher->publish(odometry2_msg);
-                    break;
-                }
-                case logic_1_CANID:
-                {
-                    robonaut_telemetry::msg::Logic1 logic1_msg;
-                    logic1_msg.target_speed = jlb_rx_t.logic_1.target_speed_phys;
-                    logic1_msg.target_angle = jlb_rx_t.logic_1.target_angle_phys;
-                    logic1_publisher->publish(logic1_msg);
-                    break;
-                }
-                default:
-                    break;
+                    uint32_t can_id = data[idx];
+                    uint8_t dlc = data[idx + 1];
+                    uint32_t received_id = jlb_Receive(&jlb_rx_t, reinterpret_cast<uint8_t *>(data + idx + 2), can_id, dlc);
+
+                    switch (received_id)
+                    {
+                    case measurements_1_CANID:
+                    {
+                        robonaut_telemetry::msg::Measurements1 measurements1_msg;
+                        measurements1_msg.line_sensor_1 = jlb_rx_t.measurements_1.line_sensor_1;
+                        measurements1_msg.line_sensor_2 = jlb_rx_t.measurements_1.line_sensor_2;
+                        measurements1_msg.line_sensor_3 = jlb_rx_t.measurements_1.line_sensor_3;
+                        measurements1_msg.line_sensor_4 = jlb_rx_t.measurements_1.line_sensor_4;
+                        measurements1_msg.line_sensor_5 = jlb_rx_t.measurements_1.line_sensor_5;
+                        measurements1_msg.line_sensor_6 = jlb_rx_t.measurements_1.line_sensor_6;
+                        measurements1_msg.line_sensor_7 = jlb_rx_t.measurements_1.line_sensor_7;
+                        measurements1_msg.line_sensor_8 = jlb_rx_t.measurements_1.line_sensor_8;
+                        measurements1_msg.line_sensor_9 = jlb_rx_t.measurements_1.line_sensor_9;
+                        measurements1_msg.line_sensor_10 = jlb_rx_t.measurements_1.line_sensor_10;
+                        measurements1_msg.line_sensor_11 = jlb_rx_t.measurements_1.line_sensor_11;
+                        measurements1_msg.line_sensor_12 = jlb_rx_t.measurements_1.line_sensor_12;
+                        measurements1_msg.line_sensor_13 = jlb_rx_t.measurements_1.line_sensor_13;
+                        measurements1_msg.line_sensor_14 = jlb_rx_t.measurements_1.line_sensor_14;
+                        measurements1_msg.line_sensor_15 = jlb_rx_t.measurements_1.line_sensor_15;
+                        measurements1_msg.line_sensor_16 = jlb_rx_t.measurements_1.line_sensor_16;
+                        measurements1_msg.line_sensor_17 = jlb_rx_t.measurements_1.line_sensor_17;
+                        measurements1_msg.line_sensor_18 = jlb_rx_t.measurements_1.line_sensor_18;
+                        measurements1_msg.line_sensor_19 = jlb_rx_t.measurements_1.line_sensor_19;
+                        measurements1_msg.line_sensor_20 = jlb_rx_t.measurements_1.line_sensor_20;
+                        measurements1_msg.line_sensor_21 = jlb_rx_t.measurements_1.line_sensor_21;
+                        measurements1_msg.line_sensor_22 = jlb_rx_t.measurements_1.line_sensor_22;
+                        measurements1_msg.line_sensor_23 = jlb_rx_t.measurements_1.line_sensor_23;
+                        measurements1_msg.line_sensor_24 = jlb_rx_t.measurements_1.line_sensor_24;
+                        measurements1_msg.line_sensor_25 = jlb_rx_t.measurements_1.line_sensor_25;
+                        measurements1_msg.line_sensor_26 = jlb_rx_t.measurements_1.line_sensor_26;
+                        measurements1_msg.line_sensor_27 = jlb_rx_t.measurements_1.line_sensor_27;
+                        measurements1_msg.line_sensor_28 = jlb_rx_t.measurements_1.line_sensor_28;
+                        measurements1_msg.line_sensor_29 = jlb_rx_t.measurements_1.line_sensor_29;
+                        measurements1_msg.line_sensor_30 = jlb_rx_t.measurements_1.line_sensor_30;
+                        measurements1_msg.line_sensor_31 = jlb_rx_t.measurements_1.line_sensor_31;
+                        measurements1_msg.line_sensor_32 = jlb_rx_t.measurements_1.line_sensor_32;
+                        measurements1_publisher->publish(measurements1_msg);
+                        break;
+                    }
+                    case measurements_2_CANID:
+                    {
+                        robonaut_telemetry::msg::Measurements2 measurements2_msg;
+                        measurements2_msg.line_sensor_1 = jlb_rx_t.measurements_2.line_sensor_1;
+                        measurements2_msg.line_sensor_2 = jlb_rx_t.measurements_2.line_sensor_2;
+                        measurements2_msg.line_sensor_3 = jlb_rx_t.measurements_2.line_sensor_3;
+                        measurements2_msg.line_sensor_4 = jlb_rx_t.measurements_2.line_sensor_4;
+                        measurements2_msg.line_sensor_5 = jlb_rx_t.measurements_2.line_sensor_5;
+                        measurements2_msg.line_sensor_6 = jlb_rx_t.measurements_2.line_sensor_6;
+                        measurements2_msg.line_sensor_7 = jlb_rx_t.measurements_2.line_sensor_7;
+                        measurements2_msg.line_sensor_8 = jlb_rx_t.measurements_2.line_sensor_8;
+                        measurements2_msg.line_sensor_9 = jlb_rx_t.measurements_2.line_sensor_9;
+                        measurements2_msg.line_sensor_10 = jlb_rx_t.measurements_2.line_sensor_10;
+                        measurements2_msg.line_sensor_11 = jlb_rx_t.measurements_2.line_sensor_11;
+                        measurements2_msg.line_sensor_12 = jlb_rx_t.measurements_2.line_sensor_12;
+                        measurements2_msg.line_sensor_13 = jlb_rx_t.measurements_2.line_sensor_13;
+                        measurements2_msg.line_sensor_14 = jlb_rx_t.measurements_2.line_sensor_14;
+                        measurements2_msg.line_sensor_15 = jlb_rx_t.measurements_2.line_sensor_15;
+                        measurements2_msg.line_sensor_16 = jlb_rx_t.measurements_2.line_sensor_16;
+                        measurements2_msg.line_sensor_17 = jlb_rx_t.measurements_2.line_sensor_17;
+                        measurements2_msg.line_sensor_18 = jlb_rx_t.measurements_2.line_sensor_18;
+                        measurements2_msg.line_sensor_19 = jlb_rx_t.measurements_2.line_sensor_19;
+                        measurements2_msg.line_sensor_20 = jlb_rx_t.measurements_2.line_sensor_20;
+                        measurements2_msg.line_sensor_21 = jlb_rx_t.measurements_2.line_sensor_21;
+                        measurements2_msg.line_sensor_22 = jlb_rx_t.measurements_2.line_sensor_22;
+                        measurements2_msg.line_sensor_23 = jlb_rx_t.measurements_2.line_sensor_23;
+                        measurements2_msg.line_sensor_24 = jlb_rx_t.measurements_2.line_sensor_24;
+                        measurements2_msg.line_sensor_25 = jlb_rx_t.measurements_2.line_sensor_25;
+                        measurements2_msg.line_sensor_26 = jlb_rx_t.measurements_2.line_sensor_26;
+                        measurements2_msg.line_sensor_27 = jlb_rx_t.measurements_2.line_sensor_27;
+                        measurements2_msg.line_sensor_28 = jlb_rx_t.measurements_2.line_sensor_28;
+                        measurements2_msg.line_sensor_29 = jlb_rx_t.measurements_2.line_sensor_29;
+                        measurements2_msg.line_sensor_30 = jlb_rx_t.measurements_2.line_sensor_30;
+                        measurements2_msg.line_sensor_31 = jlb_rx_t.measurements_2.line_sensor_31;
+                        measurements2_msg.line_sensor_32 = jlb_rx_t.measurements_2.line_sensor_32;
+                        measurements2_publisher->publish(measurements2_msg);
+                        break;
+                    }
+                    case measurements_3_CANID:
+                    {
+                        robonaut_telemetry::msg::Measurements3 measurements3_msg;
+                        measurements3_msg.angular_velocity_x = jlb_rx_t.measurements_3.angular_velocity_x_phys;
+                        measurements3_msg.angular_velocity_y = jlb_rx_t.measurements_3.angular_velocity_y_phys;
+                        measurements3_msg.angular_velocity_z = jlb_rx_t.measurements_3.angular_velocity_z_phys;
+                        measurements3_publisher->publish(measurements3_msg);
+                        break;
+                    }
+                    case measurements_4_CANID:
+                    {
+                        robonaut_telemetry::msg::Measurements4 measurements4_msg;
+                        measurements4_msg.linear_acceleration_x = jlb_rx_t.measurements_4.linear_acceleration_x_phys;
+                        measurements4_msg.linear_acceleration_y = jlb_rx_t.measurements_4.linear_acceleration_y_phys;
+                        measurements4_msg.linear_acceleration_z = jlb_rx_t.measurements_4.linear_acceleration_z_phys;
+                        measurements4_publisher->publish(measurements4_msg);
+                        break;
+                    }
+                    case measurements_5_CANID:
+                    {
+                        robonaut_telemetry::msg::Measurements5 measurements5_msg;
+                        measurements5_msg.motor_rpm = jlb_rx_t.measurements_5.motor_rpm_phys;
+                        measurements5_publisher->publish(measurements5_msg);
+                        break;
+                    }
+                    case odometry_1_CANID:
+                    {
+                        robonaut_telemetry::msg::Odometry1 odometry1_msg;
+                        odometry1_msg.position_x = jlb_rx_t.odometry_1.position_x_phys;
+                        odometry1_msg.position_y = jlb_rx_t.odometry_1.position_y_phys;
+                        odometry1_msg.orientation = jlb_rx_t.odometry_1.orientation_phys;
+                        odometry1_publisher->publish(odometry1_msg);
+
+                        pose_msg.pose.position.x = odometry1_msg.position_x;
+                        pose_msg.pose.position.y = odometry1_msg.position_y;
+                        tf2::Quaternion q2;
+                        q2.setRPY(0.0, 0.0, odometry1_msg.orientation);
+                        geometry_msgs::msg::Quaternion q2_msg;
+                        q2_msg.x = q2.x();
+                        q2_msg.y = q2.y();
+                        q2_msg.z = q2.z();
+                        q2_msg.w = q2.w();
+                        pose_msg.pose.orientation = q2_msg;
+                        pose_publisher->publish(pose_msg);
+                        break;
+                    }
+                    case odometry_2_CANID:
+                    {
+                        robonaut_telemetry::msg::Odometry2 odometry2_msg;
+                        odometry2_msg.linear_velocity_x = jlb_rx_t.odometry_2.linear_velocity_x_phys;
+                        odometry2_msg.angular_velocity_z = jlb_rx_t.odometry_2.angular_velocity_z_phys;
+                        odometry2_publisher->publish(odometry2_msg);
+                        break;
+                    }
+                    case logic_1_CANID:
+                    {
+                        robonaut_telemetry::msg::Logic1 logic1_msg;
+                        logic1_msg.target_speed = jlb_rx_t.logic_1.target_speed_phys;
+                        logic1_msg.target_angle = jlb_rx_t.logic_1.target_angle_phys;
+                        logic1_publisher->publish(logic1_msg);
+                        break;
+                    }
+                    default:
+                        break;
+                    }
+                    idx += dlc + 2;
                 }
             }
         }
