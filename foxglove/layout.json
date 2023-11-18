@@ -67,37 +67,87 @@
       "foxglovePanelTitle": "map"
     },
     "Indicator!q8nmax": {
-      "path": "",
-      "style": "bulb",
+      "path": "/logic2.state",
+      "style": "background",
       "fallbackColor": "#a0a0a0",
       "fallbackLabel": "False",
       "rules": [
         {
           "operator": "=",
-          "rawValue": "true",
-          "color": "#68e24a",
-          "label": "True"
+          "rawValue": "0",
+          "color": "#ff0000",
+          "label": "LABYRINTH"
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#0068ff",
+          "label": "FAST"
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#00ff0d",
+          "label": "FAST_TURN"
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ffed00",
+          "label": "FAST_OVERTAKE"
         }
-      ]
+      ],
+      "foxglovePanelTitle": "as_state"
     },
     "Indicator!3k2zk4x": {
-      "path": "",
-      "style": "bulb",
+      "path": "/logic2.direction",
+      "style": "background",
       "fallbackColor": "#a0a0a0",
       "fallbackLabel": "False",
       "rules": [
         {
           "operator": "=",
-          "rawValue": "true",
-          "color": "#68e24a",
-          "label": "True"
+          "rawValue": "0",
+          "color": "#ff0000",
+          "label": "LEFT"
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#0081ff",
+          "label": "RIGHT"
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#13ff00",
+          "label": "STRAIGHT"
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#f8ff00",
+          "label": "REVERSE_LEFT"
+        },
+        {
+          "operator": "=",
+          "rawValue": "4",
+          "color": "#ff6a00",
+          "label": "REVERSE_RIGHT"
+        },
+        {
+          "operator": "=",
+          "rawValue": "5",
+          "color": "#b600ff",
+          "label": "REVERSE_STRAIGHT"
         }
-      ]
+      ],
+      "foxglovePanelTitle": "direction"
     },
     "Indicator!2yhgqf6": {
-      "path": "",
-      "style": "bulb",
-      "fallbackColor": "#a0a0a0",
+      "path": "/logic2.at_cross_section",
+      "style": "background",
+      "fallbackColor": "#ff0000",
       "fallbackLabel": "False",
       "rules": [
         {
@@ -106,11 +156,27 @@
           "color": "#68e24a",
           "label": "True"
         }
-      ]
+      ],
+      "foxglovePanelTitle": "at_cross_section"
+    },
+    "Indicator!4cv50yt": {
+      "path": "/logic2.under_gate",
+      "style": "background",
+      "fallbackColor": "#ff0000",
+      "fallbackLabel": "False",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#68e24a",
+          "label": "True"
+        }
+      ],
+      "foxglovePanelTitle": "under_gate"
     },
     "Indicator!20q56bl": {
-      "path": "",
-      "style": "bulb",
+      "path": "/logic2.previous_node",
+      "style": "background",
       "fallbackColor": "#a0a0a0",
       "fallbackLabel": "False",
       "rules": [
@@ -120,7 +186,23 @@
           "color": "#68e24a",
           "label": "True"
         }
-      ]
+      ],
+      "foxglovePanelTitle": "prev_node"
+    },
+    "Indicator!33ss190": {
+      "path": "/logic2.next_node",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "False",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#68e24a",
+          "label": "True"
+        }
+      ],
+      "foxglovePanelTitle": "next_node"
     },
     "Plot!30vyklp": {
       "paths": [
@@ -161,6 +243,51 @@
       "sidebarDimension": 240,
       "followingViewWidth": 10,
       "foxglovePanelTitle": "target_speed"
+    },
+    "Plot!7h2ze8": {
+      "paths": [
+        {
+          "value": "/measurements5.object_range",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "showLine": true
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": false,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "object_range"
+    },
+    "Plot!1ziexsq": {
+      "paths": [
+        {
+          "value": "/logic1.cross_track_error",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "showLine": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/logic1.heading_error",
+          "enabled": true
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": false,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "errors"
     },
     "Indicator!1uszlyr": {
       "path": "/measurements1.line_sensor_1",
@@ -2397,8 +2524,16 @@
                     "direction": "column"
                   },
                   "second": {
-                    "first": "Indicator!2yhgqf6",
-                    "second": "Indicator!20q56bl",
+                    "first": {
+                      "first": "Indicator!2yhgqf6",
+                      "second": "Indicator!4cv50yt",
+                      "direction": "row"
+                    },
+                    "second": {
+                      "first": "Indicator!20q56bl",
+                      "second": "Indicator!33ss190",
+                      "direction": "row"
+                    },
                     "direction": "column"
                   },
                   "direction": "column"
@@ -2407,8 +2542,16 @@
                 "splitPercentage": 81.5203955500618
               },
               "second": {
-                "first": "Plot!30vyklp",
-                "second": "Plot!vbk62z",
+                "first": {
+                  "first": "Plot!30vyklp",
+                  "second": {
+                    "first": "Plot!vbk62z",
+                    "second": "Plot!7h2ze8",
+                    "direction": "row"
+                  },
+                  "direction": "column"
+                },
+                "second": "Plot!1ziexsq",
                 "direction": "row"
               },
               "direction": "column",

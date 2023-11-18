@@ -1,1 +1,2 @@
 float32 motor_rpm
+float32 object_range
