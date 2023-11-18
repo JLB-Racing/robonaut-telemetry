@@ -8,7 +8,6 @@
 
 #include "JLB/udp.hxx"
 #include "JLB/common.hxx"
-#include "JLB/signals.hxx"
 #include "jlb-binutil.h"
 
 #include <rclcpp/rclcpp.hpp>
