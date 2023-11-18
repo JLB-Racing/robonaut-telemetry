@@ -1,6 +1,128 @@
 {
   "configById": {
-    "Plot!159hwde": {
+    "3D!3uylxxx": {
+      "cameraState": {
+        "distance": 4.5,
+        "perspective": false,
+        "phi": 0.3368206285414249,
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOffset": [
+          0,
+          1,
+          -1.0321266017206301e-18
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "thetaOffset": 90.00000000016742,
+        "fovy": 40,
+        "near": 0,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {
+        "enableStats": false,
+        "syncCamera": false,
+        "transforms": {
+          "showLabel": false
+        }
+      },
+      "transforms": {},
+      "topics": {
+        "/map": {
+          "visible": true,
+          "frameLocked": true,
+          "colorMode": "custom"
+        },
+        "/pose": {
+          "visible": true,
+          "axisScale": 0.448,
+          "type": "arrow",
+          "arrowScale": [
+            0.25,
+            0.075,
+            0.075
+          ]
+        }
+      },
+      "layers": {},
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "imageMode": {},
+      "followTf": "map_transformed",
+      "foxglovePanelTitle": "map"
+    },
+    "Indicator!q8nmax": {
+      "path": "",
+      "style": "bulb",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "False",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#68e24a",
+          "label": "True"
+        }
+      ]
+    },
+    "Indicator!3k2zk4x": {
+      "path": "",
+      "style": "bulb",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "False",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#68e24a",
+          "label": "True"
+        }
+      ]
+    },
+    "Indicator!2yhgqf6": {
+      "path": "",
+      "style": "bulb",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "False",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#68e24a",
+          "label": "True"
+        }
+      ]
+    },
+    "Indicator!20q56bl": {
+      "path": "",
+      "style": "bulb",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "False",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#68e24a",
+          "label": "True"
+        }
+      ]
+    },
+    "Plot!30vyklp": {
       "paths": [
         {
           "value": "/logic1.target_angle",
@@ -20,12 +142,13 @@
       "followingViewWidth": 10,
       "foxglovePanelTitle": "target_angle"
     },
-    "Plot!o2jkhq": {
+    "Plot!vbk62z": {
       "paths": [
         {
           "value": "/logic1.target_speed",
           "enabled": true,
-          "timestampMethod": "receiveTime"
+          "timestampMethod": "receiveTime",
+          "showLine": true
         }
       ],
       "showXAxisLabels": true,
@@ -41,6 +164,38 @@
     },
     "Indicator!1uszlyr": {
       "path": "/measurements1.line_sensor_1",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!2idzv8d": {
+      "path": "/measurements2.line_sensor_1",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -103,8 +258,72 @@
         }
       ]
     },
+    "Indicator!4fcredn": {
+      "path": "/measurements2.line_sensor_2",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!3ss6oqh": {
       "path": "/measurements1.line_sensor_3",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!13b2j0d": {
+      "path": "/measurements2.line_sensor_3",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -167,8 +386,72 @@
         }
       ]
     },
+    "Indicator!tfl42j": {
+      "path": "/measurements2.line_sensor_4",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!3zhr58u": {
       "path": "/measurements1.line_sensor_5",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!ocov3p": {
+      "path": "/measurements2.line_sensor_5",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -231,8 +514,72 @@
         }
       ]
     },
+    "Indicator!2oxra8i": {
+      "path": "/measurements2.line_sensor_6",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!3kkmqer": {
       "path": "/measurements1.line_sensor_7",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!2p7mwi5": {
+      "path": "/measurements2.line_sensor_7",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -295,8 +642,72 @@
         }
       ]
     },
+    "Indicator!8oamly": {
+      "path": "/measurements2.line_sensor_8",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!1kdzoyr": {
       "path": "/measurements1.line_sensor_9",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!4gh32at": {
+      "path": "/measurements2.line_sensor_9",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -359,8 +770,72 @@
         }
       ]
     },
+    "Indicator!3wh3swg": {
+      "path": "/measurements2.line_sensor_10",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!19x55yl": {
       "path": "/measurements1.line_sensor_11",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!3uqiw5g": {
+      "path": "/measurements2.line_sensor_11",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -423,8 +898,72 @@
         }
       ]
     },
+    "Indicator!30jajts": {
+      "path": "/measurements2.line_sensor_12",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!2a88rej": {
       "path": "/measurements1.line_sensor_13",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!4az56cc": {
+      "path": "/measurements2.line_sensor_13",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -487,7 +1026,71 @@
         }
       ]
     },
+    "Indicator!41hl0ez": {
+      "path": "/measurements2.line_sensor_14",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!2epejx8": {
+      "path": "/measurements1.line_sensor_15",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!12wzq0y": {
       "path": "/measurements1.line_sensor_15",
       "style": "background",
       "fallbackColor": "#0037ff",
@@ -551,8 +1154,72 @@
         }
       ]
     },
+    "Indicator!1ftqpqq": {
+      "path": "/measurements2.line_sensor_16",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!3kivszp": {
       "path": "/measurements1.line_sensor_17",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!470okca": {
+      "path": "/measurements2.line_sensor_17",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -615,8 +1282,72 @@
         }
       ]
     },
+    "Indicator!1kx3q05": {
+      "path": "/measurements2.line_sensor_18",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!2srg787": {
       "path": "/measurements1.line_sensor_19",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!zbl0oe": {
+      "path": "/measurements2.line_sensor_19",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -679,8 +1410,72 @@
         }
       ]
     },
+    "Indicator!1kjdt5f": {
+      "path": "/measurements2.line_sensor_20",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!1mq1vpa": {
       "path": "/measurements1.line_sensor_21",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!2nsjlr9": {
+      "path": "/measurements2.line_sensor_21",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -743,8 +1538,72 @@
         }
       ]
     },
+    "Indicator!3bixbk5": {
+      "path": "/measurements2.line_sensor_22",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!3mwl2c9": {
       "path": "/measurements1.line_sensor_23",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!7h2sv6": {
+      "path": "/measurements2.line_sensor_23",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -807,8 +1666,72 @@
         }
       ]
     },
+    "Indicator!4j9u5hu": {
+      "path": "/measurements2.line_sensor_24",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!4eef0e0": {
       "path": "/measurements1.line_sensor_25",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!3rctx0s": {
+      "path": "/measurements2.line_sensor_25",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -871,8 +1794,72 @@
         }
       ]
     },
+    "Indicator!2pd7uak": {
+      "path": "/measurements2.line_sensor_26",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!2bcbjfu": {
       "path": "/measurements1.line_sensor_27",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!5tf9wl": {
+      "path": "/measurements2.line_sensor_27",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -935,8 +1922,72 @@
         }
       ]
     },
+    "Indicator!45bb4z4": {
+      "path": "/measurements2.line_sensor_28",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!49xu0cn": {
       "path": "/measurements1.line_sensor_29",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!2qjm46a": {
+      "path": "/measurements2.line_sensor_29",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -999,6 +2050,38 @@
         }
       ]
     },
+    "Indicator!3f7ltim": {
+      "path": "/measurements2.line_sensor_30",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!2eyihwk": {
       "path": "/measurements1.line_sensor_31",
       "style": "background",
@@ -1031,8 +2114,72 @@
         }
       ]
     },
+    "Indicator!1s24j6f": {
+      "path": "/measurements2.line_sensor_31",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
     "Indicator!4lcihrw": {
       "path": "/measurements1.line_sensor_32",
+      "style": "background",
+      "fallbackColor": "#0037ff",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "0",
+          "color": "#000000",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#ffffff",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "2",
+          "color": "#1cff00",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "3",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ]
+    },
+    "Indicator!155sev8": {
+      "path": "/measurements2.line_sensor_32",
       "style": "background",
       "fallbackColor": "#0037ff",
       "fallbackLabel": "",
@@ -1241,35 +2388,89 @@
           "title": "logic",
           "layout": {
             "first": {
-              "first": "Plot!159hwde",
-              "second": "Plot!o2jkhq",
-              "direction": "row"
+              "first": {
+                "first": "3D!3uylxxx",
+                "second": {
+                  "first": {
+                    "first": "Indicator!q8nmax",
+                    "second": "Indicator!3k2zk4x",
+                    "direction": "column"
+                  },
+                  "second": {
+                    "first": "Indicator!2yhgqf6",
+                    "second": "Indicator!20q56bl",
+                    "direction": "column"
+                  },
+                  "direction": "column"
+                },
+                "direction": "row",
+                "splitPercentage": 81.5203955500618
+              },
+              "second": {
+                "first": "Plot!30vyklp",
+                "second": "Plot!vbk62z",
+                "direction": "row"
+              },
+              "direction": "column",
+              "splitPercentage": 61.295148925407084
             },
             "second": {
               "first": {
                 "first": {
                   "first": {
                     "first": {
-                      "first": "Indicator!1uszlyr",
-                      "second": "Indicator!2tigo9p",
+                      "first": {
+                        "first": "Indicator!1uszlyr",
+                        "second": "Indicator!2idzv8d",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!2tigo9p",
+                        "second": "Indicator!4fcredn",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "second": {
-                      "first": "Indicator!3ss6oqh",
-                      "second": "Indicator!41m0lkc",
+                      "first": {
+                        "first": "Indicator!3ss6oqh",
+                        "second": "Indicator!13b2j0d",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!41m0lkc",
+                        "second": "Indicator!tfl42j",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "direction": "row"
                   },
                   "second": {
                     "first": {
-                      "first": "Indicator!3zhr58u",
-                      "second": "Indicator!2nztxt4",
+                      "first": {
+                        "first": "Indicator!3zhr58u",
+                        "second": "Indicator!ocov3p",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!2nztxt4",
+                        "second": "Indicator!2oxra8i",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "second": {
-                      "first": "Indicator!3kkmqer",
-                      "second": "Indicator!1o00ho9",
+                      "first": {
+                        "first": "Indicator!3kkmqer",
+                        "second": "Indicator!2p7mwi5",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!1o00ho9",
+                        "second": "Indicator!8oamly",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "direction": "row"
@@ -1279,26 +2480,58 @@
                 "second": {
                   "first": {
                     "first": {
-                      "first": "Indicator!1kdzoyr",
-                      "second": "Indicator!3jfum5y",
+                      "first": {
+                        "first": "Indicator!1kdzoyr",
+                        "second": "Indicator!4gh32at",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!3jfum5y",
+                        "second": "Indicator!3wh3swg",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "second": {
-                      "first": "Indicator!19x55yl",
-                      "second": "Indicator!c6rgra",
+                      "first": {
+                        "first": "Indicator!19x55yl",
+                        "second": "Indicator!3uqiw5g",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!c6rgra",
+                        "second": "Indicator!30jajts",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "direction": "row"
                   },
                   "second": {
                     "first": {
-                      "first": "Indicator!2a88rej",
-                      "second": "Indicator!38g383e",
+                      "first": {
+                        "first": "Indicator!2a88rej",
+                        "second": "Indicator!4az56cc",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!38g383e",
+                        "second": "Indicator!41hl0ez",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "second": {
-                      "first": "Indicator!2epejx8",
-                      "second": "Indicator!3umbvy8",
+                      "first": {
+                        "first": "Indicator!2epejx8",
+                        "second": "Indicator!12wzq0y",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!3umbvy8",
+                        "second": "Indicator!1ftqpqq",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "direction": "row"
@@ -1311,26 +2544,58 @@
                 "first": {
                   "first": {
                     "first": {
-                      "first": "Indicator!3kivszp",
-                      "second": "Indicator!ruaqhq",
+                      "first": {
+                        "first": "Indicator!3kivszp",
+                        "second": "Indicator!470okca",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!ruaqhq",
+                        "second": "Indicator!1kx3q05",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "second": {
-                      "first": "Indicator!2srg787",
-                      "second": "Indicator!1a35tyf",
+                      "first": {
+                        "first": "Indicator!2srg787",
+                        "second": "Indicator!zbl0oe",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!1a35tyf",
+                        "second": "Indicator!1kjdt5f",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "direction": "row"
                   },
                   "second": {
                     "first": {
-                      "first": "Indicator!1mq1vpa",
-                      "second": "Indicator!1glsb6j",
+                      "first": {
+                        "first": "Indicator!1mq1vpa",
+                        "second": "Indicator!2nsjlr9",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!1glsb6j",
+                        "second": "Indicator!3bixbk5",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "second": {
-                      "first": "Indicator!3mwl2c9",
-                      "second": "Indicator!18j6sp8",
+                      "first": {
+                        "first": "Indicator!3mwl2c9",
+                        "second": "Indicator!7h2sv6",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!18j6sp8",
+                        "second": "Indicator!4j9u5hu",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "direction": "row",
@@ -1341,26 +2606,58 @@
                 "second": {
                   "first": {
                     "first": {
-                      "first": "Indicator!4eef0e0",
-                      "second": "Indicator!3nwdpq9",
+                      "first": {
+                        "first": "Indicator!4eef0e0",
+                        "second": "Indicator!3rctx0s",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!3nwdpq9",
+                        "second": "Indicator!2pd7uak",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "second": {
-                      "first": "Indicator!2bcbjfu",
-                      "second": "Indicator!1ufrcz2",
+                      "first": {
+                        "first": "Indicator!2bcbjfu",
+                        "second": "Indicator!5tf9wl",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!1ufrcz2",
+                        "second": "Indicator!45bb4z4",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "direction": "row"
                   },
                   "second": {
                     "first": {
-                      "first": "Indicator!49xu0cn",
-                      "second": "Indicator!2wacpcw",
+                      "first": {
+                        "first": "Indicator!49xu0cn",
+                        "second": "Indicator!2qjm46a",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!2wacpcw",
+                        "second": "Indicator!3f7ltim",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "second": {
-                      "first": "Indicator!2eyihwk",
-                      "second": "Indicator!4lcihrw",
+                      "first": {
+                        "first": "Indicator!2eyihwk",
+                        "second": "Indicator!1s24j6f",
+                        "direction": "column"
+                      },
+                      "second": {
+                        "first": "Indicator!4lcihrw",
+                        "second": "Indicator!155sev8",
+                        "direction": "column"
+                      },
                       "direction": "row"
                     },
                     "direction": "row"
@@ -1372,7 +2669,7 @@
               "direction": "row"
             },
             "direction": "column",
-            "splitPercentage": 83.90342052313883
+            "splitPercentage": 87.35213830755232
           }
         },
         {
@@ -1415,1182 +2712,6 @@
           }
         }
       ]
-    },
-    "3D!3uylxxx": {
-      "cameraState": {
-        "perspective": false,
-        "distance": 4.266142541836421,
-        "phi": 0.3368206285414249,
-        "thetaOffset": 90.00000000016554,
-        "targetOffset": [
-          0,
-          0,
-          -1.427958819499086e-18
-        ],
-        "target": [
-          0,
-          0,
-          0
-        ],
-        "targetOrientation": [
-          0,
-          0,
-          0,
-          1
-        ],
-        "fovy": 40,
-        "near": 0,
-        "far": 5000
-      },
-      "followMode": "follow-pose",
-      "scene": {
-        "enableStats": false,
-        "syncCamera": false,
-        "transforms": {
-          "showLabel": false
-        }
-      },
-      "transforms": {},
-      "topics": {
-        "/map": {
-          "visible": true,
-          "frameLocked": true,
-          "colorMode": "custom"
-        },
-        "/pose": {
-          "visible": true,
-          "axisScale": 0.448,
-          "type": "arrow",
-          "arrowScale": [
-            0.25,
-            0.075,
-            0.075
-          ]
-        }
-      },
-      "layers": {},
-      "publish": {
-        "type": "point",
-        "poseTopic": "/move_base_simple/goal",
-        "pointTopic": "/clicked_point",
-        "poseEstimateTopic": "/initialpose",
-        "poseEstimateXDeviation": 0.5,
-        "poseEstimateYDeviation": 0.5,
-        "poseEstimateThetaDeviation": 0.26179939
-      },
-      "imageMode": {},
-      "followTf": "map_transformed",
-      "foxglovePanelTitle": "map"
-    },
-    "Indicator!9hbtkj": {
-      "path": "",
-      "style": "background",
-      "fallbackColor": "#ffffff",
-      "fallbackLabel": "FRONT",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "true",
-          "color": "#68e24a",
-          "label": "True"
-        }
-      ],
-      "foxglovePanelTitle": " "
-    },
-    "Indicator!jjy2oa": {
-      "path": "",
-      "style": "bulb",
-      "fallbackColor": "#a0a0a0",
-      "fallbackLabel": "False",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "true",
-          "color": "#68e24a",
-          "label": "True"
-        }
-      ]
-    },
-    "Indicator!7xzn9k": {
-      "path": "",
-      "style": "bulb",
-      "fallbackColor": "#a0a0a0",
-      "fallbackLabel": "False",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "true",
-          "color": "#68e24a",
-          "label": "True"
-        }
-      ]
-    },
-    "Indicator!106tj45": {
-      "path": "",
-      "style": "bulb",
-      "fallbackColor": "#a0a0a0",
-      "fallbackLabel": "False",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "true",
-          "color": "#68e24a",
-          "label": "True"
-        }
-      ]
-    },
-    "Indicator!v56vuo": {
-      "path": "",
-      "style": "bulb",
-      "fallbackColor": "#a0a0a0",
-      "fallbackLabel": "False",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "true",
-          "color": "#68e24a",
-          "label": "True"
-        }
-      ]
-    },
-    "Indicator!48tw3rq": {
-      "path": "",
-      "style": "background",
-      "fallbackColor": "#ffffff",
-      "fallbackLabel": "REAR",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "true",
-          "color": "#68e24a",
-          "label": "True"
-        }
-      ],
-      "foxglovePanelTitle": " "
-    },
-    "Indicator!3hpsuzj": {
-      "path": "/measurements2.line_sensor_1",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!3n83ach": {
-      "path": "/measurements2.line_sensor_2",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!3h1f8rk": {
-      "path": "/measurements2.line_sensor_3",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!3o6qeae": {
-      "path": "/measurements2.line_sensor_4",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!24u268e": {
-      "path": "/measurements2.line_sensor_5",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!1tko5vz": {
-      "path": "/measurements2.line_sensor_6",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!20z5iem": {
-      "path": "/measurements2.line_sensor_7",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!1qwt0vr": {
-      "path": "/measurements2.line_sensor_8",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!2titqj2": {
-      "path": "/measurements2.line_sensor_9",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!2elko71": {
-      "path": "/measurements2.line_sensor_10",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!bq8j8s": {
-      "path": "/measurements2.line_sensor_11",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!f15b0i": {
-      "path": "/measurements2.line_sensor_12",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!w7wxpg": {
-      "path": "/measurements2.line_sensor_13",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!3zlejpi": {
-      "path": "/measurements2.line_sensor_14",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!14mdnle": {
-      "path": "/measurements2.line_sensor_15",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!47nz19b": {
-      "path": "/measurements2.line_sensor_16",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!2tpyi0v": {
-      "path": "/measurements2.line_sensor_17",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!39rgfcc": {
-      "path": "/measurements2.line_sensor_18",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!40l69gs": {
-      "path": "/measurements2.line_sensor_19",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!oxrmt0": {
-      "path": "/measurements2.line_sensor_20",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!22cln5": {
-      "path": "/measurements2.line_sensor_21",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!3glnp6k": {
-      "path": "/measurements2.line_sensor_22",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!iwx8i3": {
-      "path": "/measurements2.line_sensor_23",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!1ozhhzu": {
-      "path": "/measurements2.line_sensor_24",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!2qezm37": {
-      "path": "/measurements2.line_sensor_25",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!3uifin0": {
-      "path": "/measurements2.line_sensor_26",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!3s4906b": {
-      "path": "/measurements2.line_sensor_27",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!3znobiv": {
-      "path": "/measurements2.line_sensor_28",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!42szxrl": {
-      "path": "/measurements2.line_sensor_29",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!3fl7qxi": {
-      "path": "/measurements2.line_sensor_30",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!2novtx7": {
-      "path": "/measurements2.line_sensor_31",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
-    },
-    "Indicator!4811tpr": {
-      "path": "/measurements2.line_sensor_32",
-      "style": "background",
-      "fallbackColor": "#0037ff",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "0",
-          "color": "#000000",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "1",
-          "color": "#ffffff",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "2",
-          "color": "#1cff00",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "3",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ]
     }
   },
   "globalVariables": {},
@@ -2598,167 +2719,5 @@
   "playbackConfig": {
     "speed": 1
   },
-  "layout": {
-    "first": "Tab!3styih1",
-    "second": {
-      "first": {
-        "first": "3D!3uylxxx",
-        "second": {
-          "first": {
-            "first": "Indicator!9hbtkj",
-            "second": {
-              "first": "Indicator!jjy2oa",
-              "second": "Indicator!7xzn9k",
-              "direction": "column"
-            },
-            "direction": "column",
-            "splitPercentage": 22.393822393822365
-          },
-          "second": {
-            "first": {
-              "first": "Indicator!106tj45",
-              "second": "Indicator!v56vuo",
-              "direction": "column"
-            },
-            "second": "Indicator!48tw3rq",
-            "direction": "column",
-            "splitPercentage": 76.0617760617761
-          },
-          "direction": "column"
-        },
-        "direction": "row",
-        "splitPercentage": 76.6236138026197
-      },
-      "second": {
-        "first": {
-          "first": {
-            "first": {
-              "first": {
-                "first": "Indicator!3hpsuzj",
-                "second": "Indicator!3n83ach",
-                "direction": "row"
-              },
-              "second": {
-                "first": "Indicator!3h1f8rk",
-                "second": "Indicator!3o6qeae",
-                "direction": "row"
-              },
-              "direction": "row"
-            },
-            "second": {
-              "first": {
-                "first": "Indicator!24u268e",
-                "second": "Indicator!1tko5vz",
-                "direction": "row"
-              },
-              "second": {
-                "first": "Indicator!20z5iem",
-                "second": "Indicator!1qwt0vr",
-                "direction": "row"
-              },
-              "direction": "row"
-            },
-            "direction": "row"
-          },
-          "second": {
-            "first": {
-              "first": {
-                "first": "Indicator!2titqj2",
-                "second": "Indicator!2elko71",
-                "direction": "row"
-              },
-              "second": {
-                "first": "Indicator!bq8j8s",
-                "second": "Indicator!f15b0i",
-                "direction": "row",
-                "splitPercentage": 49.46004319654435
-              },
-              "direction": "row"
-            },
-            "second": {
-              "first": {
-                "first": "Indicator!w7wxpg",
-                "second": "Indicator!3zlejpi",
-                "direction": "row"
-              },
-              "second": {
-                "first": "Indicator!14mdnle",
-                "second": "Indicator!47nz19b",
-                "direction": "row"
-              },
-              "direction": "row"
-            },
-            "direction": "row"
-          },
-          "direction": "row"
-        },
-        "second": {
-          "first": {
-            "first": {
-              "first": {
-                "first": "Indicator!2tpyi0v",
-                "second": "Indicator!39rgfcc",
-                "direction": "row"
-              },
-              "second": {
-                "first": "Indicator!40l69gs",
-                "second": "Indicator!oxrmt0",
-                "direction": "row"
-              },
-              "direction": "row"
-            },
-            "second": {
-              "first": {
-                "first": "Indicator!22cln5",
-                "second": "Indicator!3glnp6k",
-                "direction": "row"
-              },
-              "second": {
-                "first": "Indicator!iwx8i3",
-                "second": "Indicator!1ozhhzu",
-                "direction": "row"
-              },
-              "direction": "row"
-            },
-            "direction": "row"
-          },
-          "second": {
-            "first": {
-              "first": {
-                "first": "Indicator!2qezm37",
-                "second": "Indicator!3uifin0",
-                "direction": "row"
-              },
-              "second": {
-                "first": "Indicator!3s4906b",
-                "second": "Indicator!3znobiv",
-                "direction": "row"
-              },
-              "direction": "row"
-            },
-            "second": {
-              "first": {
-                "first": "Indicator!42szxrl",
-                "second": "Indicator!3fl7qxi",
-                "direction": "row"
-              },
-              "second": {
-                "first": "Indicator!2novtx7",
-                "second": "Indicator!4811tpr",
-                "direction": "row"
-              },
-              "direction": "row"
-            },
-            "direction": "row"
-          },
-          "direction": "row"
-        },
-        "direction": "row"
-      },
-      "direction": "column",
-      "splitPercentage": 86.04651162790698
-    },
-    "direction": "column",
-    "splitPercentage": 46.6784765279008
-  }
+  "layout": "Tab!3styih1"
 }
