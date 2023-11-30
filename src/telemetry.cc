@@ -44,7 +44,7 @@ namespace jlb
     class Telemetry : public rclcpp::Node
     {
     public:
-        Telemetry() : Node("telemetry"), server(SERVER_ADDRESS, SERVER_PORT), tf_broadcaster(this)
+        Telemetry() : Node("telemetry"), server(RECEIVER_ADDRESS, RECEIVER_PORT), tf_broadcaster(this)
         {
             RCLCPP_INFO(get_logger(), "node started.");
 
