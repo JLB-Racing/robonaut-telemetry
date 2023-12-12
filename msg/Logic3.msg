@@ -1,0 +1,6 @@
+float32 ang_error_norm
+float32 dist_error_norm
+float32 line_position_rear
+float32 line_position_front
+bool at_cross_section
+bool under_gate

@@ -36,6 +36,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Odometry2.msg"
   "msg/Logic1.msg"
   "msg/Logic2.msg"
+  "msg/Logic3.msg"
   DEPENDENCIES sensor_msgs std_msgs
 )
 
