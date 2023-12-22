@@ -1,4 +1,4 @@
-std_msgs/Header header
+uint32 timestamp
 float32 orientation
 float32 position_x
 float32 position_y

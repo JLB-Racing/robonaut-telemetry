@@ -1,4 +1,4 @@
-std_msgs/Header header
+uint32 timestamp
 float32 distance_traveled
 uint8 labyrinth_state
 uint8 fast_state

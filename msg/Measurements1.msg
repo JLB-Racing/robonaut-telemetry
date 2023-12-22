@@ -1,4 +1,4 @@
-std_msgs/Header header
+uint32 timestamp
 uint8 line_sensor_1
 uint8 line_sensor_2
 uint8 line_sensor_3

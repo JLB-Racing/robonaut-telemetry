@@ -1,4 +1,4 @@
-std_msgs/Header header
+uint32 timestamp
 float32 linear_acceleration_x
 float32 linear_acceleration_y
 float32 linear_acceleration_z

@@ -1,3 +1,3 @@
-std_msgs/Header header
+uint32 timestamp
 float32 angular_velocity_z
 float32 linear_velocity_x
