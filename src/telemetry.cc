@@ -23,6 +23,7 @@
 #include <robonaut_telemetry/msg/odometry1.hpp>
 #include <robonaut_telemetry/msg/odometry2.hpp>
 #include <std_msgs/msg/float32.hpp>
+#include <std_msgs/msg/header.hpp>
 #include <string>
 #include <vector>
 
@@ -233,6 +234,7 @@ namespace jlb
                         case measurements_1_CANID:
                         {
                             robonaut_telemetry::msg::Measurements1 measurements1_msg;
+                            measurements1_msg.header.stamp   = this->now();
                             measurements1_msg.line_sensor_1  = jlb_rx_t.measurements_1.line_sensor_1;
                             measurements1_msg.line_sensor_2  = jlb_rx_t.measurements_1.line_sensor_2;
                             measurements1_msg.line_sensor_3  = jlb_rx_t.measurements_1.line_sensor_3;
@@ -271,6 +273,7 @@ namespace jlb
                         case measurements_2_CANID:
                         {
                             robonaut_telemetry::msg::Measurements2 measurements2_msg;
+                            measurements2_msg.header.stamp   = this->now();
                             measurements2_msg.line_sensor_1  = jlb_rx_t.measurements_2.line_sensor_1;
                             measurements2_msg.line_sensor_2  = jlb_rx_t.measurements_2.line_sensor_2;
                             measurements2_msg.line_sensor_3  = jlb_rx_t.measurements_2.line_sensor_3;
@@ -309,6 +312,7 @@ namespace jlb
                         case measurements_3_CANID:
                         {
                             robonaut_telemetry::msg::Measurements3 measurements3_msg;
+                            measurements3_msg.header.stamp       = this->now();
                             measurements3_msg.angular_velocity_x = jlb_rx_t.measurements_3.angular_velocity_x_phys;
                             measurements3_msg.angular_velocity_y = jlb_rx_t.measurements_3.angular_velocity_y_phys;
                             measurements3_msg.angular_velocity_z = jlb_rx_t.measurements_3.angular_velocity_z_phys;
@@ -318,6 +322,7 @@ namespace jlb
                         case measurements_4_CANID:
                         {
                             robonaut_telemetry::msg::Measurements4 measurements4_msg;
+                            measurements4_msg.header.stamp          = this->now();
                             measurements4_msg.linear_acceleration_x = jlb_rx_t.measurements_4.linear_acceleration_x_phys;
                             measurements4_msg.linear_acceleration_y = jlb_rx_t.measurements_4.linear_acceleration_y_phys;
                             measurements4_msg.linear_acceleration_z = jlb_rx_t.measurements_4.linear_acceleration_z_phys;
@@ -327,6 +332,7 @@ namespace jlb
                         case measurements_5_CANID:
                         {
                             robonaut_telemetry::msg::Measurements5 measurements5_msg;
+                            measurements5_msg.header.stamp  = this->now();
                             measurements5_msg.duty_cycle    = jlb_rx_t.measurements_5.duty_cycle_phys;
                             measurements5_msg.motor_current = jlb_rx_t.measurements_5.motor_current_phys;
                             measurements5_msg.object_range  = jlb_rx_t.measurements_5.object_range_phys;
@@ -337,9 +343,10 @@ namespace jlb
                         case odometry_1_CANID:
                         {
                             robonaut_telemetry::msg::Odometry1 odometry1_msg;
-                            odometry1_msg.position_x  = jlb_rx_t.odometry_1.position_x_phys;
-                            odometry1_msg.position_y  = jlb_rx_t.odometry_1.position_y_phys;
-                            odometry1_msg.orientation = jlb_rx_t.odometry_1.orientation_phys;
+                            odometry1_msg.header.stamp = this->now();
+                            odometry1_msg.position_x   = jlb_rx_t.odometry_1.position_x_phys;
+                            odometry1_msg.position_y   = jlb_rx_t.odometry_1.position_y_phys;
+                            odometry1_msg.orientation  = jlb_rx_t.odometry_1.orientation_phys;
                             odometry1_publisher->publish(odometry1_msg);
 
                             pose_msg.pose.position.x = odometry1_msg.position_x;
@@ -358,6 +365,7 @@ namespace jlb
                         case odometry_2_CANID:
                         {
                             robonaut_telemetry::msg::Odometry2 odometry2_msg;
+                            odometry2_msg.header.stamp       = this->now();
                             odometry2_msg.linear_velocity_x  = jlb_rx_t.odometry_2.linear_velocity_x_phys;
                             odometry2_msg.angular_velocity_z = jlb_rx_t.odometry_2.angular_velocity_z_phys;
                             odometry2_publisher->publish(odometry2_msg);
@@ -366,6 +374,7 @@ namespace jlb
                         case logic_1_CANID:
                         {
                             robonaut_telemetry::msg::Logic1 logic1_msg;
+                            logic1_msg.header.stamp      = this->now();
                             logic1_msg.target_speed      = jlb_rx_t.logic_1.target_speed_phys;
                             logic1_msg.target_angle      = jlb_rx_t.logic_1.target_angle_phys;
                             logic1_msg.cross_track_error = jlb_rx_t.logic_1.cross_track_error_phys;
@@ -376,6 +385,7 @@ namespace jlb
                         case logic_2_CANID:
                         {
                             robonaut_telemetry::msg::Logic2 logic2_msg;
+                            logic2_msg.header.stamp      = this->now();
                             logic2_msg.distance_traveled = jlb_rx_t.logic_2.distance_traveled_phys;
                             logic2_msg.labyrinth_state   = jlb_rx_t.logic_2.labyrinth_state;
                             logic2_msg.fast_state        = jlb_rx_t.logic_2.fast_state;
@@ -389,6 +399,7 @@ namespace jlb
                         case logic_3_CANID:
                         {
                             robonaut_telemetry::msg::Logic3 logic3_msg;
+                            logic3_msg.header.stamp        = this->now();
                             logic3_msg.ang_error_norm      = jlb_rx_t.logic_3.ang_error_norm_phys;
                             logic3_msg.dist_error_norm     = jlb_rx_t.logic_3.dist_error_norm_phys;
                             logic3_msg.line_position_rear  = jlb_rx_t.logic_3.line_position_rear_phys;

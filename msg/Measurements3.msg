@@ -1,3 +1,4 @@
+std_msgs/Header header
 float32 angular_velocity_x
 float32 angular_velocity_y
 float32 angular_velocity_z
