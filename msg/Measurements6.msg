@@ -1,0 +1,4 @@
+uint32 timestamp
+bool deadman_switch
+float32 lv_battery_voltage
+float32 hv_battery_voltage

@@ -16,10 +16,12 @@
 #include <robonaut_telemetry/msg/logic1.hpp>
 #include <robonaut_telemetry/msg/logic2.hpp>
 #include <robonaut_telemetry/msg/logic3.hpp>
+#include <robonaut_telemetry/msg/logic4.hpp>
 #include <robonaut_telemetry/msg/measurements1.hpp>
 #include <robonaut_telemetry/msg/measurements3.hpp>
 #include <robonaut_telemetry/msg/measurements4.hpp>
 #include <robonaut_telemetry/msg/measurements5.hpp>
+#include <robonaut_telemetry/msg/measurements6.hpp>
 #include <robonaut_telemetry/msg/odometry1.hpp>
 #include <robonaut_telemetry/msg/odometry2.hpp>
 #include <std_msgs/msg/float32.hpp>
@@ -62,11 +64,13 @@ namespace jlb
             measurements3_publisher = create_publisher<robonaut_telemetry::msg::Measurements3>("measurements3", 10);
             measurements4_publisher = create_publisher<robonaut_telemetry::msg::Measurements4>("measurements4", 10);
             measurements5_publisher = create_publisher<robonaut_telemetry::msg::Measurements5>("measurements5", 10);
+            measurements6_publisher = create_publisher<robonaut_telemetry::msg::Measurements6>("measurements6", 10);
             odometry1_publisher     = create_publisher<robonaut_telemetry::msg::Odometry1>("odometry1", 10);
             odometry2_publisher     = create_publisher<robonaut_telemetry::msg::Odometry2>("odometry2", 10);
             logic1_publisher        = create_publisher<robonaut_telemetry::msg::Logic1>("logic1", 10);
             logic2_publisher        = create_publisher<robonaut_telemetry::msg::Logic2>("logic2", 10);
             logic3_publisher        = create_publisher<robonaut_telemetry::msg::Logic3>("logic3", 10);
+            logic4_publisher        = create_publisher<robonaut_telemetry::msg::Logic4>("logic4", 10);
         }
         ~Telemetry() { RCLCPP_INFO(get_logger(), "node stopped."); }
 
@@ -87,11 +91,13 @@ namespace jlb
         rclcpp::Publisher<robonaut_telemetry::msg::Measurements3>::SharedPtr measurements3_publisher;
         rclcpp::Publisher<robonaut_telemetry::msg::Measurements4>::SharedPtr measurements4_publisher;
         rclcpp::Publisher<robonaut_telemetry::msg::Measurements5>::SharedPtr measurements5_publisher;
+        rclcpp::Publisher<robonaut_telemetry::msg::Measurements6>::SharedPtr measurements6_publisher;
         rclcpp::Publisher<robonaut_telemetry::msg::Odometry1>::SharedPtr     odometry1_publisher;
         rclcpp::Publisher<robonaut_telemetry::msg::Odometry2>::SharedPtr     odometry2_publisher;
         rclcpp::Publisher<robonaut_telemetry::msg::Logic1>::SharedPtr        logic1_publisher;
         rclcpp::Publisher<robonaut_telemetry::msg::Logic2>::SharedPtr        logic2_publisher;
         rclcpp::Publisher<robonaut_telemetry::msg::Logic3>::SharedPtr        logic3_publisher;
+        rclcpp::Publisher<robonaut_telemetry::msg::Logic4>::SharedPtr        logic4_publisher;
 
         rclcpp::TimerBase::SharedPtr map_timer;
         rclcpp::TimerBase::SharedPtr udp_timer;
@@ -347,6 +353,16 @@ namespace jlb
                             measurements5_publisher->publish(measurements5_msg);
                             break;
                         }
+                        case measurements_6_CANID:
+                        {
+                            robonaut_telemetry::msg::Measurements6 measurements6_msg;
+                            measurements6_msg.timestamp          = timestamp;
+                            measurements6_msg.deadman_switch     = jlb_rx_t.measurements_6.deadman_switch;
+                            measurements6_msg.lv_battery_voltage = jlb_rx_t.measurements_6.lv_battery_voltage_phys;
+                            measurements6_msg.hv_battery_voltage = jlb_rx_t.measurements_6.hv_battery_voltage_phys;
+                            measurements6_publisher->publish(measurements6_msg);
+                            break;
+                        }
                         case odometry_1_CANID:
                         {
                             robonaut_telemetry::msg::Odometry1 odometry1_msg;
@@ -414,6 +430,19 @@ namespace jlb
                             logic3_msg.at_cross_section    = jlb_rx_t.logic_3.at_cross_section;
                             logic3_msg.under_gate          = jlb_rx_t.logic_3.under_gate;
                             logic3_publisher->publish(logic3_msg);
+                            break;
+                        }
+                        case logic_4_CANID:
+                        {
+                            robonaut_telemetry::msg::Logic4 logic4_msg;
+                            logic4_msg.timestamp            = timestamp;
+                            logic4_msg.last_laptime         = jlb_rx_t.logic_4.last_laptime_phys;
+                            logic4_msg.goal_node            = jlb_rx_t.logic_4.goal_node;
+                            logic4_msg.mission_switch_state = jlb_rx_t.logic_4.mission_switch_state;
+                            logic4_msg.target_distance      = jlb_rx_t.logic_4.target_distance_phys;
+                            logic4_msg.current_laptime      = jlb_rx_t.logic_4.current_laptime_phys;
+                            logic4_msg.best_laptime         = jlb_rx_t.logic_4.best_laptime_phys;
+                            logic4_publisher->publish(logic4_msg);
                             break;
                         }
 
