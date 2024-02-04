@@ -322,84 +322,7 @@
       ],
       "foxglovePanelTitle": "labyrinth_state"
     },
-    "RawMessages!1ljmt7k": {
-      "diffEnabled": false,
-      "diffMethod": "custom",
-      "diffTopicPath": "",
-      "showFullMessageForDiff": false,
-      "topicPath": "/logic2.distance_traveled"
-    },
-    "RawMessages!2wqih1y": {
-      "diffEnabled": false,
-      "diffMethod": "custom",
-      "diffTopicPath": "",
-      "showFullMessageForDiff": false,
-      "topicPath": "/logic4.target_distance"
-    },
-    "Indicator!4cv50yt": {
-      "path": "/measurements6.deadman_switch",
-      "style": "background",
-      "fallbackColor": "#a0a0a0",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "false",
-          "color": "#68e24a",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "true",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ],
-      "foxglovePanelTitle": "deadman"
-    },
-    "Indicator!4ikh7ji": {
-      "path": "/logic3.under_gate",
-      "style": "background",
-      "fallbackColor": "#a0a0a0",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "true",
-          "color": "#68e24a",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "false",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ],
-      "foxglovePanelTitle": "gate"
-    },
-    "Indicator!4kknfgh": {
-      "path": "/logic3.at_cross_section",
-      "style": "background",
-      "fallbackColor": "#a0a0a0",
-      "fallbackLabel": "",
-      "rules": [
-        {
-          "operator": "=",
-          "rawValue": "true",
-          "color": "#68e24a",
-          "label": ""
-        },
-        {
-          "operator": "=",
-          "rawValue": "false",
-          "color": "#ff0000",
-          "label": ""
-        }
-      ],
-      "foxglovePanelTitle": "cross"
-    },
-    "Indicator!2fyyi4f": {
+    "Indicator!1aaz3zq": {
       "path": "/logic2.direction",
       "style": "background",
       "fallbackColor": "#a0a0a0",
@@ -425,6 +348,20 @@
         }
       ],
       "foxglovePanelTitle": "direction"
+    },
+    "RawMessages!1ljmt7k": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/logic2.distance_traveled"
+    },
+    "RawMessages!2wqih1y": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/logic4.target_distance"
     },
     "Indicator!20q56bl": {
       "path": "/logic2.previous_node",
@@ -601,7 +538,184 @@
           "label": "["
         }
       ],
-      "foxglovePanelTitle": "prev_node"
+      "foxglovePanelTitle": "prev"
+    },
+    "Indicator!bw5ypf": {
+      "path": "/logic5.pirate_previous",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "64",
+          "color": "#a0a0a0",
+          "label": "@"
+        },
+        {
+          "operator": "=",
+          "rawValue": "65",
+          "color": "#7292f6",
+          "label": "A"
+        },
+        {
+          "operator": "=",
+          "rawValue": "66",
+          "color": "#3cea75",
+          "label": "B"
+        },
+        {
+          "operator": "=",
+          "rawValue": "67",
+          "color": "#a62596",
+          "label": "C"
+        },
+        {
+          "operator": "=",
+          "rawValue": "68",
+          "color": "#349e99",
+          "label": "D"
+        },
+        {
+          "operator": "=",
+          "rawValue": "69",
+          "color": "#ddcb13",
+          "label": "E"
+        },
+        {
+          "operator": "=",
+          "rawValue": "70",
+          "color": "#8bf92b",
+          "label": "F"
+        },
+        {
+          "operator": "=",
+          "rawValue": "71",
+          "color": "#d907d1",
+          "label": "G"
+        },
+        {
+          "operator": "=",
+          "rawValue": "72",
+          "color": "#c56e12",
+          "label": "H"
+        },
+        {
+          "operator": "=",
+          "rawValue": "73",
+          "color": "#ed2502",
+          "label": "I"
+        },
+        {
+          "operator": "=",
+          "rawValue": "74",
+          "color": "#3c960a",
+          "label": "J"
+        },
+        {
+          "operator": "=",
+          "rawValue": "75",
+          "color": "#be2532",
+          "label": "K"
+        },
+        {
+          "operator": "=",
+          "rawValue": "76",
+          "color": "#f1d606",
+          "label": "L"
+        },
+        {
+          "operator": "=",
+          "rawValue": "77",
+          "color": "#6bb2ca",
+          "label": "M"
+        },
+        {
+          "operator": "=",
+          "rawValue": "78",
+          "color": "#9b69b1",
+          "label": "N"
+        },
+        {
+          "operator": "=",
+          "rawValue": "79",
+          "color": "#c6b55d",
+          "label": "O"
+        },
+        {
+          "operator": "=",
+          "rawValue": "80",
+          "color": "#6486c1",
+          "label": "P"
+        },
+        {
+          "operator": "=",
+          "rawValue": "81",
+          "color": "#94a91a",
+          "label": "Q"
+        },
+        {
+          "operator": "=",
+          "rawValue": "82",
+          "color": "#8680d9",
+          "label": "R"
+        },
+        {
+          "operator": "=",
+          "rawValue": "83",
+          "color": "#7c7641",
+          "label": "S"
+        },
+        {
+          "operator": "=",
+          "rawValue": "84",
+          "color": "#8c6af1",
+          "label": "T"
+        },
+        {
+          "operator": "=",
+          "rawValue": "85",
+          "color": "#6bec6c",
+          "label": "U"
+        },
+        {
+          "operator": "=",
+          "rawValue": "86",
+          "color": "#6d7a01",
+          "label": "V"
+        },
+        {
+          "operator": "=",
+          "rawValue": "87",
+          "color": "#ba80ae",
+          "label": "W"
+        },
+        {
+          "operator": "=",
+          "rawValue": "88",
+          "color": "#6e3588",
+          "label": "X"
+        },
+        {
+          "operator": "=",
+          "rawValue": "89",
+          "color": "#d5cbe8",
+          "label": "Y"
+        },
+        {
+          "operator": "=",
+          "rawValue": "90",
+          "color": "#5094b5",
+          "label": "Z"
+        },
+        {
+          "operator": "=",
+          "rawValue": "91",
+          "color": "#1ab299",
+          "label": "["
+        }
+      ],
+      "foxglovePanelTitle": "P_prev"
     },
     "Indicator!13c44k5": {
       "path": "/logic2.next_node",
@@ -778,7 +892,184 @@
           "label": "["
         }
       ],
-      "foxglovePanelTitle": "next_node"
+      "foxglovePanelTitle": "next"
+    },
+    "Indicator!26c7eys": {
+      "path": "/logic5.pirate_next",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "64",
+          "color": "#a0a0a0",
+          "label": "@"
+        },
+        {
+          "operator": "=",
+          "rawValue": "65",
+          "color": "#7292f6",
+          "label": "A"
+        },
+        {
+          "operator": "=",
+          "rawValue": "66",
+          "color": "#3cea75",
+          "label": "B"
+        },
+        {
+          "operator": "=",
+          "rawValue": "67",
+          "color": "#a62596",
+          "label": "C"
+        },
+        {
+          "operator": "=",
+          "rawValue": "68",
+          "color": "#349e99",
+          "label": "D"
+        },
+        {
+          "operator": "=",
+          "rawValue": "69",
+          "color": "#ddcb13",
+          "label": "E"
+        },
+        {
+          "operator": "=",
+          "rawValue": "70",
+          "color": "#8bf92b",
+          "label": "F"
+        },
+        {
+          "operator": "=",
+          "rawValue": "71",
+          "color": "#d907d1",
+          "label": "G"
+        },
+        {
+          "operator": "=",
+          "rawValue": "72",
+          "color": "#c56e12",
+          "label": "H"
+        },
+        {
+          "operator": "=",
+          "rawValue": "73",
+          "color": "#ed2502",
+          "label": "I"
+        },
+        {
+          "operator": "=",
+          "rawValue": "74",
+          "color": "#3c960a",
+          "label": "J"
+        },
+        {
+          "operator": "=",
+          "rawValue": "75",
+          "color": "#be2532",
+          "label": "K"
+        },
+        {
+          "operator": "=",
+          "rawValue": "76",
+          "color": "#f1d606",
+          "label": "L"
+        },
+        {
+          "operator": "=",
+          "rawValue": "77",
+          "color": "#6bb2ca",
+          "label": "M"
+        },
+        {
+          "operator": "=",
+          "rawValue": "78",
+          "color": "#9b69b1",
+          "label": "N"
+        },
+        {
+          "operator": "=",
+          "rawValue": "79",
+          "color": "#c6b55d",
+          "label": "O"
+        },
+        {
+          "operator": "=",
+          "rawValue": "80",
+          "color": "#6486c1",
+          "label": "P"
+        },
+        {
+          "operator": "=",
+          "rawValue": "81",
+          "color": "#94a91a",
+          "label": "Q"
+        },
+        {
+          "operator": "=",
+          "rawValue": "82",
+          "color": "#8680d9",
+          "label": "R"
+        },
+        {
+          "operator": "=",
+          "rawValue": "83",
+          "color": "#7c7641",
+          "label": "S"
+        },
+        {
+          "operator": "=",
+          "rawValue": "84",
+          "color": "#8c6af1",
+          "label": "T"
+        },
+        {
+          "operator": "=",
+          "rawValue": "85",
+          "color": "#6bec6c",
+          "label": "U"
+        },
+        {
+          "operator": "=",
+          "rawValue": "86",
+          "color": "#6d7a01",
+          "label": "V"
+        },
+        {
+          "operator": "=",
+          "rawValue": "87",
+          "color": "#ba80ae",
+          "label": "W"
+        },
+        {
+          "operator": "=",
+          "rawValue": "88",
+          "color": "#6e3588",
+          "label": "X"
+        },
+        {
+          "operator": "=",
+          "rawValue": "89",
+          "color": "#d5cbe8",
+          "label": "Y"
+        },
+        {
+          "operator": "=",
+          "rawValue": "90",
+          "color": "#5094b5",
+          "label": "Z"
+        },
+        {
+          "operator": "=",
+          "rawValue": "91",
+          "color": "#1ab299",
+          "label": "["
+        }
+      ],
+      "foxglovePanelTitle": "P_next"
     },
     "Indicator!o6j925": {
       "path": "/logic4.goal_node",
@@ -955,7 +1246,184 @@
           "label": "["
         }
       ],
-      "foxglovePanelTitle": "goal_node"
+      "foxglovePanelTitle": "goal"
+    },
+    "Indicator!2hcoyat": {
+      "path": "/logic5.pirate_after_next",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "64",
+          "color": "#a0a0a0",
+          "label": "@"
+        },
+        {
+          "operator": "=",
+          "rawValue": "65",
+          "color": "#7292f6",
+          "label": "A"
+        },
+        {
+          "operator": "=",
+          "rawValue": "66",
+          "color": "#3cea75",
+          "label": "B"
+        },
+        {
+          "operator": "=",
+          "rawValue": "67",
+          "color": "#a62596",
+          "label": "C"
+        },
+        {
+          "operator": "=",
+          "rawValue": "68",
+          "color": "#349e99",
+          "label": "D"
+        },
+        {
+          "operator": "=",
+          "rawValue": "69",
+          "color": "#ddcb13",
+          "label": "E"
+        },
+        {
+          "operator": "=",
+          "rawValue": "70",
+          "color": "#8bf92b",
+          "label": "F"
+        },
+        {
+          "operator": "=",
+          "rawValue": "71",
+          "color": "#d907d1",
+          "label": "G"
+        },
+        {
+          "operator": "=",
+          "rawValue": "72",
+          "color": "#c56e12",
+          "label": "H"
+        },
+        {
+          "operator": "=",
+          "rawValue": "73",
+          "color": "#ed2502",
+          "label": "I"
+        },
+        {
+          "operator": "=",
+          "rawValue": "74",
+          "color": "#3c960a",
+          "label": "J"
+        },
+        {
+          "operator": "=",
+          "rawValue": "75",
+          "color": "#be2532",
+          "label": "K"
+        },
+        {
+          "operator": "=",
+          "rawValue": "76",
+          "color": "#f1d606",
+          "label": "L"
+        },
+        {
+          "operator": "=",
+          "rawValue": "77",
+          "color": "#6bb2ca",
+          "label": "M"
+        },
+        {
+          "operator": "=",
+          "rawValue": "78",
+          "color": "#9b69b1",
+          "label": "N"
+        },
+        {
+          "operator": "=",
+          "rawValue": "79",
+          "color": "#c6b55d",
+          "label": "O"
+        },
+        {
+          "operator": "=",
+          "rawValue": "80",
+          "color": "#6486c1",
+          "label": "P"
+        },
+        {
+          "operator": "=",
+          "rawValue": "81",
+          "color": "#94a91a",
+          "label": "Q"
+        },
+        {
+          "operator": "=",
+          "rawValue": "82",
+          "color": "#8680d9",
+          "label": "R"
+        },
+        {
+          "operator": "=",
+          "rawValue": "83",
+          "color": "#7c7641",
+          "label": "S"
+        },
+        {
+          "operator": "=",
+          "rawValue": "84",
+          "color": "#8c6af1",
+          "label": "T"
+        },
+        {
+          "operator": "=",
+          "rawValue": "85",
+          "color": "#6bec6c",
+          "label": "U"
+        },
+        {
+          "operator": "=",
+          "rawValue": "86",
+          "color": "#6d7a01",
+          "label": "V"
+        },
+        {
+          "operator": "=",
+          "rawValue": "87",
+          "color": "#ba80ae",
+          "label": "W"
+        },
+        {
+          "operator": "=",
+          "rawValue": "88",
+          "color": "#6e3588",
+          "label": "X"
+        },
+        {
+          "operator": "=",
+          "rawValue": "89",
+          "color": "#d5cbe8",
+          "label": "Y"
+        },
+        {
+          "operator": "=",
+          "rawValue": "90",
+          "color": "#5094b5",
+          "label": "Z"
+        },
+        {
+          "operator": "=",
+          "rawValue": "91",
+          "color": "#1ab299",
+          "label": "["
+        }
+      ],
+      "foxglovePanelTitle": "P_after"
     },
     "Gauge!236ldp9": {
       "path": "/measurements6.lv_battery_voltage",
@@ -997,7 +1465,127 @@
       "showFullMessageForDiff": false,
       "topicPath": "/measurements6.hv_battery_voltage"
     },
-    "StateTransitions!2nna31l": {
+    "Indicator!qq2qr1": {
+      "path": "/measurements6.deadman_switch",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "false",
+          "color": "#68e24a",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "deadman"
+    },
+    "Indicator!1es90cj": {
+      "path": "/logic3.at_cross_section",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#68e24a",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "false",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "cross"
+    },
+    "Indicator!1cboabq": {
+      "path": "/logic3.under_gate",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#68e24a",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "false",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "gate"
+    },
+    "Indicator!2ngll9y": {
+      "path": "/logic5.flood",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#68e24a",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "false",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "flood"
+    },
+    "Indicator!b7bcch": {
+      "path": "/logic5.follow_car",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#68e24a",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "false",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "follow"
+    },
+    "RawMessages!1wcthqu": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/logic5.collected_gates"
+    },
+    "RawMessages!36e15f": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/logic5.collected_valid_gates",
+      "expansion": "all"
+    },
+    "StateTransitions!ljw4xj": {
       "paths": [
         {
           "value": "/logic2.mission",
@@ -1022,20 +1610,6 @@
       ],
       "isSynced": true,
       "xAxisRange": 10
-    },
-    "RawMessages!1wcthqu": {
-      "diffEnabled": false,
-      "diffMethod": "custom",
-      "diffTopicPath": "",
-      "showFullMessageForDiff": false,
-      "topicPath": "/logic3.line_position_front"
-    },
-    "RawMessages!36e15f": {
-      "diffEnabled": false,
-      "diffMethod": "custom",
-      "diffTopicPath": "",
-      "showFullMessageForDiff": false,
-      "topicPath": "/logic3.line_position_rear"
     },
     "Indicator!1uszlyr": {
       "path": "/measurements1.line_sensor_1",
@@ -3264,27 +3838,26 @@
           "layout": {
             "first": {
               "first": {
-                "first": "Plot!30vyklp",
+                "first": {
+                  "first": "Plot!30vyklp",
+                  "second": "Plot!vbk62z",
+                  "direction": "column"
+                },
                 "second": {
-                  "first": "Plot!vbk62z",
-                  "second": {
-                    "first": {
-                      "first": "Plot!7h2ze8",
-                      "second": "Plot!1ziexsq",
-                      "direction": "column"
-                    },
-                    "second": {
-                      "first": "Plot!43ekfjl",
-                      "second": "Plot!2c1nfvn",
-                      "direction": "column"
-                    },
-                    "direction": "row"
+                  "first": {
+                    "first": "Plot!7h2ze8",
+                    "second": "Plot!1ziexsq",
+                    "direction": "column"
                   },
-                  "direction": "column",
-                  "splitPercentage": 39.46555245837723
+                  "second": {
+                    "first": "Plot!43ekfjl",
+                    "second": "Plot!2c1nfvn",
+                    "direction": "column"
+                  },
+                  "direction": "row"
                 },
                 "direction": "column",
-                "splitPercentage": 27.079107505070994
+                "splitPercentage": 54.184100418410054
               },
               "second": {
                 "first": {
@@ -3306,81 +3879,103 @@
                 "second": {
                   "first": {
                     "first": {
-                      "first": "RawMessages!1ljmt7k",
-                      "second": "RawMessages!2wqih1y",
+                      "first": {
+                        "first": "Indicator!1aaz3zq",
+                        "second": {
+                          "first": "RawMessages!1ljmt7k",
+                          "second": "RawMessages!2wqih1y",
+                          "direction": "row"
+                        },
+                        "direction": "column",
+                        "splitPercentage": 49.721813123874995
+                      },
+                      "second": {
+                        "first": "Indicator!20q56bl",
+                        "second": "Indicator!bw5ypf",
+                        "direction": "column"
+                      },
                       "direction": "row",
-                      "splitPercentage": 49.90932305413693
+                      "splitPercentage": 75.95356550580433
                     },
                     "second": {
                       "first": {
-                        "first": "Indicator!4cv50yt",
-                        "second": "Indicator!4ikh7ji",
-                        "direction": "row"
+                        "first": "Indicator!13c44k5",
+                        "second": "Indicator!26c7eys",
+                        "direction": "column",
+                        "splitPercentage": 49.48453608247423
                       },
-                      "second": "Indicator!4kknfgh",
+                      "second": {
+                        "first": "Indicator!o6j925",
+                        "second": "Indicator!2hcoyat",
+                        "direction": "column"
+                      },
                       "direction": "row",
-                      "splitPercentage": 67.00202142243083
+                      "splitPercentage": 49.30967575025871
                     },
                     "direction": "row",
-                    "splitPercentage": 51.07731305449936
+                    "splitPercentage": 67.60089686098654
                   },
                   "second": {
                     "first": {
                       "first": {
-                        "first": "Indicator!2fyyi4f",
-                        "second": "Indicator!20q56bl",
-                        "direction": "row",
-                        "splitPercentage": 75.95356550580433
+                        "first": "Gauge!236ldp9",
+                        "second": "RawMessages!2gufwom",
+                        "direction": "column",
+                        "splitPercentage": 63.714409239701084
                       },
                       "second": {
-                        "first": "Indicator!13c44k5",
-                        "second": "Indicator!o6j925",
-                        "direction": "row",
-                        "splitPercentage": 49.30967575025871
+                        "first": "Gauge!9vjkfl",
+                        "second": "RawMessages!2tncmpc",
+                        "direction": "column",
+                        "splitPercentage": 64.28880242109818
                       },
-                      "direction": "row",
-                      "splitPercentage": 67.60089686098654
+                      "direction": "column"
                     },
                     "second": {
                       "first": {
                         "first": {
-                          "first": "Gauge!236ldp9",
-                          "second": "RawMessages!2gufwom",
-                          "direction": "column",
-                          "splitPercentage": 59.090909090909115
+                          "first": "Indicator!qq2qr1",
+                          "second": "Indicator!1es90cj",
+                          "direction": "row",
+                          "splitPercentage": 52.75558966130654
                         },
                         "second": {
-                          "first": "Gauge!9vjkfl",
-                          "second": "RawMessages!2tncmpc",
-                          "direction": "column",
-                          "splitPercentage": 58.67768595041321
+                          "first": "Indicator!1cboabq",
+                          "second": {
+                            "first": "Indicator!2ngll9y",
+                            "second": "Indicator!b7bcch",
+                            "direction": "row"
+                          },
+                          "direction": "row",
+                          "splitPercentage": 34.51327433628317
                         },
-                        "direction": "column"
+                        "direction": "row",
+                        "splitPercentage": 41.05630222616842
                       },
                       "second": {
-                        "first": "StateTransitions!2nna31l",
-                        "second": {
+                        "first": {
                           "first": "RawMessages!1wcthqu",
                           "second": "RawMessages!36e15f",
                           "direction": "row"
                         },
+                        "second": "StateTransitions!ljw4xj",
                         "direction": "column",
-                        "splitPercentage": 79.33884297520662
+                        "splitPercentage": 25.28473804100227
                       },
-                      "direction": "row",
-                      "splitPercentage": 37.00887198986059
+                      "direction": "column",
+                      "splitPercentage": 20.01420542276575
                     },
-                    "direction": "column",
-                    "splitPercentage": 20.655737704918035
+                    "direction": "row",
+                    "splitPercentage": 37.00887198986059
                   },
                   "direction": "column",
-                  "splitPercentage": 13.841807909604523
+                  "splitPercentage": 27.401129943502823
                 },
                 "direction": "column",
-                "splitPercentage": 25.941422594142267
+                "splitPercentage": 21.54811715481172
               },
               "direction": "row",
-              "splitPercentage": 51.73160173160173
+              "splitPercentage": 54.38311688311688
             },
             "second": {
               "first": {

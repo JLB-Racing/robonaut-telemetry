@@ -17,6 +17,7 @@
 #include <robonaut_telemetry/msg/logic2.hpp>
 #include <robonaut_telemetry/msg/logic3.hpp>
 #include <robonaut_telemetry/msg/logic4.hpp>
+#include <robonaut_telemetry/msg/logic5.hpp>
 #include <robonaut_telemetry/msg/measurements1.hpp>
 #include <robonaut_telemetry/msg/measurements3.hpp>
 #include <robonaut_telemetry/msg/measurements4.hpp>
@@ -71,6 +72,7 @@ namespace jlb
             logic2_publisher        = create_publisher<robonaut_telemetry::msg::Logic2>("logic2", 10);
             logic3_publisher        = create_publisher<robonaut_telemetry::msg::Logic3>("logic3", 10);
             logic4_publisher        = create_publisher<robonaut_telemetry::msg::Logic4>("logic4", 10);
+            logic5_publisher        = create_publisher<robonaut_telemetry::msg::Logic5>("logic5", 10);
         }
         ~Telemetry() { RCLCPP_INFO(get_logger(), "node stopped."); }
 
@@ -98,6 +100,7 @@ namespace jlb
         rclcpp::Publisher<robonaut_telemetry::msg::Logic2>::SharedPtr        logic2_publisher;
         rclcpp::Publisher<robonaut_telemetry::msg::Logic3>::SharedPtr        logic3_publisher;
         rclcpp::Publisher<robonaut_telemetry::msg::Logic4>::SharedPtr        logic4_publisher;
+        rclcpp::Publisher<robonaut_telemetry::msg::Logic5>::SharedPtr        logic5_publisher;
 
         rclcpp::TimerBase::SharedPtr map_timer;
         rclcpp::TimerBase::SharedPtr udp_timer;
@@ -444,6 +447,18 @@ namespace jlb
                             logic4_msg.best_laptime         = jlb_rx_t.logic_4.best_laptime_phys;
                             logic4_publisher->publish(logic4_msg);
                             break;
+                        }
+                        case logic_5_CANID:
+                        {
+                            robonaut_telemetry::msg::Logic5 logic5_msg;
+                            logic5_msg.collected_valid_gates = timestamp;
+                            logic5_msg.collected_gates       = jlb_rx_t.logic_5.collected_gates;
+                            logic5_msg.flood                 = jlb_rx_t.logic_5.flood;
+                            logic5_msg.follow_car            = jlb_rx_t.logic_5.follow_car;
+                            logic5_msg.pirate_previous       = jlb_rx_t.logic_5.pirate_previous;
+                            logic5_msg.pirate_next           = jlb_rx_t.logic_5.pirate_next;
+                            logic5_msg.pirate_after_next     = jlb_rx_t.logic_5.pirate_after_next;
+                            logic5_publisher->publish(logic5_msg);
                         }
 
                         default:

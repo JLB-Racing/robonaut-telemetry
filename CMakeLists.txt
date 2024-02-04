@@ -40,6 +40,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Logic2.msg"
   "msg/Logic3.msg"
   "msg/Logic4.msg"
+  "msg/Logic5.msg"
   DEPENDENCIES sensor_msgs std_msgs
 )
 
