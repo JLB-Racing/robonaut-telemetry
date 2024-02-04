@@ -1,70 +1,134 @@
 {
   "configById": {
-    "3D!3uylxxx": {
-      "cameraState": {
-        "distance": 5.75,
-        "perspective": false,
-        "phi": 0.3368206285414249,
-        "target": [
-          0,
-          0,
-          0
-        ],
-        "targetOffset": [
-          0.008048481838810368,
-          0.9999999999999764,
-          -1.0321266017206301e-18
-        ],
-        "targetOrientation": [
-          0,
-          0,
-          0,
-          1
-        ],
-        "thetaOffset": 90.00000000016833,
-        "fovy": 40,
-        "near": 0,
-        "far": 5000
-      },
-      "followMode": "follow-pose",
-      "scene": {
-        "enableStats": false,
-        "syncCamera": false,
-        "transforms": {
-          "showLabel": false
+    "Plot!30vyklp": {
+      "paths": [
+        {
+          "value": "/logic1.target_angle",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "showLine": true
         }
-      },
-      "transforms": {},
-      "topics": {
-        "/map": {
-          "visible": true,
-          "frameLocked": true,
-          "colorMode": "custom"
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": false,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "target_angle"
+    },
+    "Plot!vbk62z": {
+      "paths": [
+        {
+          "value": "/logic1.target_speed",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "showLine": true
         },
-        "/pose": {
-          "visible": true,
-          "axisScale": 0.448,
-          "type": "arrow",
-          "arrowScale": [
-            0.25,
-            0.075,
-            0.075
-          ]
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/odometry2.linear_velocity_x",
+          "enabled": true
         }
-      },
-      "layers": {},
-      "publish": {
-        "type": "point",
-        "poseTopic": "/move_base_simple/goal",
-        "pointTopic": "/clicked_point",
-        "poseEstimateTopic": "/initialpose",
-        "poseEstimateXDeviation": 0.5,
-        "poseEstimateYDeviation": 0.5,
-        "poseEstimateThetaDeviation": 0.26179939
-      },
-      "imageMode": {},
-      "followTf": "map_transformed",
-      "foxglovePanelTitle": "map"
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": false,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "target_speed"
+    },
+    "Plot!7h2ze8": {
+      "paths": [
+        {
+          "value": "/measurements5.wheel_rpm",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "showLine": true
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": false,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "wheel_rpm"
+    },
+    "Plot!1ziexsq": {
+      "paths": [
+        {
+          "value": "/logic1.cross_track_error",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "showLine": true
+        },
+        {
+          "timestampMethod": "receiveTime",
+          "value": "/logic1.heading_error",
+          "enabled": true
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": false,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "errors"
+    },
+    "Plot!43ekfjl": {
+      "paths": [
+        {
+          "value": "/measurements5.duty_cycle",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "showLine": true
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": false,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "duty_cycle"
+    },
+    "Plot!2c1nfvn": {
+      "paths": [
+        {
+          "value": "/measurements5.object_range",
+          "enabled": true,
+          "timestampMethod": "receiveTime",
+          "showLine": true
+        }
+      ],
+      "showXAxisLabels": true,
+      "showYAxisLabels": true,
+      "showLegend": false,
+      "legendDisplay": "floating",
+      "showPlotValuesInLegend": false,
+      "isSynced": true,
+      "xAxisVal": "timestamp",
+      "sidebarDimension": 240,
+      "followingViewWidth": 10,
+      "foxglovePanelTitle": "object_range"
     },
     "Indicator!q8nmax": {
       "path": "/logic2.mission",
@@ -94,7 +158,7 @@
       "foxglovePanelTitle": "as_state"
     },
     "Indicator!3k2zk4x": {
-      "path": "/logic2.direction",
+      "path": "/logic4.mission_switch_state",
       "style": "background",
       "fallbackColor": "#a0a0a0",
       "fallbackLabel": "",
@@ -130,7 +194,7 @@
           "label": "SECOND_FORWARD"
         }
       ],
-      "foxglovePanelTitle": "direction"
+      "foxglovePanelTitle": "mission_switch_state"
     },
     "Indicator!1ic3m9t": {
       "path": "/logic2.fast_state",
@@ -258,21 +322,42 @@
       ],
       "foxglovePanelTitle": "labyrinth_state"
     },
-    "RawMessages!2hb2lq4": {
+    "RawMessages!1ljmt7k": {
       "diffEnabled": false,
       "diffMethod": "custom",
       "diffTopicPath": "",
       "showFullMessageForDiff": false,
-      "topicPath": ""
+      "topicPath": "/logic2.distance_traveled"
     },
-    "RawMessages!3mwo1jy": {
+    "RawMessages!2wqih1y": {
       "diffEnabled": false,
       "diffMethod": "custom",
       "diffTopicPath": "",
       "showFullMessageForDiff": false,
-      "topicPath": ""
+      "topicPath": "/logic4.target_distance"
     },
     "Indicator!4cv50yt": {
+      "path": "/measurements6.deadman_switch",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "false",
+          "color": "#68e24a",
+          "label": ""
+        },
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#ff0000",
+          "label": ""
+        }
+      ],
+      "foxglovePanelTitle": "deadman"
+    },
+    "Indicator!4ikh7ji": {
       "path": "/logic3.under_gate",
       "style": "background",
       "fallbackColor": "#a0a0a0",
@@ -307,7 +392,7 @@
         },
         {
           "operator": "=",
-          "rawValue": "true",
+          "rawValue": "false",
           "color": "#ff0000",
           "label": ""
         }
@@ -696,7 +781,7 @@
       "foxglovePanelTitle": "next_node"
     },
     "Indicator!o6j925": {
-      "path": "/logic2.previous_node",
+      "path": "/logic4.goal_node",
       "style": "background",
       "fallbackColor": "#a0a0a0",
       "fallbackLabel": "",
@@ -873,30 +958,44 @@
       "foxglovePanelTitle": "goal_node"
     },
     "Gauge!236ldp9": {
-      "path": "/logic1.target_angle",
-      "minValue": -22.5,
-      "maxValue": 22.5,
+      "path": "/measurements6.lv_battery_voltage",
+      "minValue": 9,
+      "maxValue": 12.6,
       "colorMap": "red-yellow-green",
-      "colorMode": "gradient",
+      "colorMode": "colormap",
       "gradient": [
         "#0000ff",
         "#ff00ff"
       ],
       "reverse": false,
-      "foxglovePanelTitle": "steering"
+      "foxglovePanelTitle": "LV battery"
+    },
+    "RawMessages!2gufwom": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/measurements6.lv_battery_voltage"
     },
     "Gauge!9vjkfl": {
-      "path": "/odometry2.linear_velocity_x",
-      "minValue": 0,
-      "maxValue": 5,
+      "path": "/measurements6.hv_battery_voltage",
+      "minValue": 7.2,
+      "maxValue": 9,
       "colorMap": "red-yellow-green",
-      "colorMode": "gradient",
+      "colorMode": "colormap",
       "gradient": [
         "#0000ff",
         "#ff00ff"
       ],
       "reverse": false,
-      "foxglovePanelTitle": "velocity"
+      "foxglovePanelTitle": "HV battery"
+    },
+    "RawMessages!2tncmpc": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/measurements6.hv_battery_voltage"
     },
     "StateTransitions!2nna31l": {
       "paths": [
@@ -916,7 +1015,7 @@
           "label": "labyrinth_state"
         },
         {
-          "value": "",
+          "value": "/logic4.mission_switch_state",
           "timestampMethod": "receiveTime",
           "label": "mission_switch_state"
         }
@@ -924,95 +1023,19 @@
       "isSynced": true,
       "xAxisRange": 10
     },
-    "Plot!30vyklp": {
-      "paths": [
-        {
-          "value": "/logic1.target_angle",
-          "enabled": true,
-          "timestampMethod": "receiveTime",
-          "showLine": true
-        }
-      ],
-      "showXAxisLabels": true,
-      "showYAxisLabels": true,
-      "showLegend": false,
-      "legendDisplay": "floating",
-      "showPlotValuesInLegend": false,
-      "isSynced": true,
-      "xAxisVal": "timestamp",
-      "sidebarDimension": 240,
-      "followingViewWidth": 10,
-      "foxglovePanelTitle": "target_angle"
+    "RawMessages!1wcthqu": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/logic3.line_position_front"
     },
-    "Plot!vbk62z": {
-      "paths": [
-        {
-          "value": "/logic1.target_speed",
-          "enabled": true,
-          "timestampMethod": "receiveTime",
-          "showLine": true
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/odometry2.linear_velocity_x",
-          "enabled": true
-        }
-      ],
-      "showXAxisLabels": true,
-      "showYAxisLabels": true,
-      "showLegend": false,
-      "legendDisplay": "floating",
-      "showPlotValuesInLegend": false,
-      "isSynced": true,
-      "xAxisVal": "timestamp",
-      "sidebarDimension": 240,
-      "followingViewWidth": 10,
-      "foxglovePanelTitle": "target_speed"
-    },
-    "Plot!1ziexsq": {
-      "paths": [
-        {
-          "value": "/logic1.cross_track_error",
-          "enabled": true,
-          "timestampMethod": "receiveTime",
-          "showLine": true
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/logic1.heading_error",
-          "enabled": true
-        }
-      ],
-      "showXAxisLabels": true,
-      "showYAxisLabels": true,
-      "showLegend": false,
-      "legendDisplay": "floating",
-      "showPlotValuesInLegend": false,
-      "isSynced": true,
-      "xAxisVal": "timestamp",
-      "sidebarDimension": 240,
-      "followingViewWidth": 10,
-      "foxglovePanelTitle": "errors"
-    },
-    "Plot!7h2ze8": {
-      "paths": [
-        {
-          "value": "/measurements5.object_range",
-          "enabled": true,
-          "timestampMethod": "receiveTime",
-          "showLine": true
-        }
-      ],
-      "showXAxisLabels": true,
-      "showYAxisLabels": true,
-      "showLegend": false,
-      "legendDisplay": "floating",
-      "showPlotValuesInLegend": false,
-      "isSynced": true,
-      "xAxisVal": "timestamp",
-      "sidebarDimension": 240,
-      "followingViewWidth": 10,
-      "foxglovePanelTitle": "object_range"
+    "RawMessages!36e15f": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/logic3.line_position_rear"
     },
     "Indicator!1uszlyr": {
       "path": "/measurements1.line_sensor_1",
@@ -3233,97 +3256,6 @@
       "followingViewWidth": 10,
       "foxglovePanelTitle": "odom/angular_velocity_z"
     },
-    "RawMessages!1xnxhr8": {
-      "diffEnabled": false,
-      "diffMethod": "custom",
-      "diffTopicPath": "",
-      "showFullMessageForDiff": false,
-      "topicPath": "/logic2.fast_state"
-    },
-    "StateTransitions!35efqdj": {
-      "paths": [
-        {
-          "value": "/logic2.fast_state",
-          "timestampMethod": "receiveTime"
-        }
-      ],
-      "isSynced": true,
-      "showPoints": true,
-      "xAxisRange": 10
-    },
-    "RawMessages!1n78b2b": {
-      "diffEnabled": false,
-      "diffMethod": "custom",
-      "diffTopicPath": "",
-      "showFullMessageForDiff": false,
-      "topicPath": "/logic2.distance_traveled"
-    },
-    "RawMessages!29t8kd5": {
-      "diffEnabled": false,
-      "diffMethod": "custom",
-      "diffTopicPath": "",
-      "showFullMessageForDiff": false,
-      "topicPath": "/logic2.timestamp"
-    },
-    "Plot!3pj7rhg": {
-      "paths": [
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/logic1.target_speed",
-          "enabled": true
-        },
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/odometry2.linear_velocity_x",
-          "enabled": true
-        }
-      ],
-      "showXAxisLabels": true,
-      "showYAxisLabels": true,
-      "showLegend": true,
-      "legendDisplay": "floating",
-      "showPlotValuesInLegend": false,
-      "isSynced": true,
-      "xAxisVal": "timestamp",
-      "sidebarDimension": 240,
-      "followingViewWidth": 10
-    },
-    "Plot!3r9urei": {
-      "paths": [
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/measurements5.wheel_rpm",
-          "enabled": true
-        }
-      ],
-      "showXAxisLabels": true,
-      "showYAxisLabels": true,
-      "showLegend": true,
-      "legendDisplay": "floating",
-      "showPlotValuesInLegend": false,
-      "isSynced": true,
-      "xAxisVal": "timestamp",
-      "sidebarDimension": 240,
-      "followingViewWidth": 10
-    },
-    "Plot!2u5sn9v": {
-      "paths": [
-        {
-          "timestampMethod": "receiveTime",
-          "value": "/measurements5.duty_cycle",
-          "enabled": true
-        }
-      ],
-      "showXAxisLabels": true,
-      "showYAxisLabels": true,
-      "showLegend": true,
-      "legendDisplay": "floating",
-      "showPlotValuesInLegend": false,
-      "isSynced": true,
-      "xAxisVal": "timestamp",
-      "sidebarDimension": 240,
-      "followingViewWidth": 10
-    },
     "Tab!3styih1": {
       "activeTabIdx": 0,
       "tabs": [
@@ -3332,96 +3264,123 @@
           "layout": {
             "first": {
               "first": {
-                "first": "3D!3uylxxx",
+                "first": "Plot!30vyklp",
+                "second": {
+                  "first": "Plot!vbk62z",
+                  "second": {
+                    "first": {
+                      "first": "Plot!7h2ze8",
+                      "second": "Plot!1ziexsq",
+                      "direction": "column"
+                    },
+                    "second": {
+                      "first": "Plot!43ekfjl",
+                      "second": "Plot!2c1nfvn",
+                      "direction": "column"
+                    },
+                    "direction": "row"
+                  },
+                  "direction": "column",
+                  "splitPercentage": 39.46555245837723
+                },
+                "direction": "column",
+                "splitPercentage": 27.079107505070994
+              },
+              "second": {
+                "first": {
+                  "first": {
+                    "first": "Indicator!q8nmax",
+                    "second": "Indicator!3k2zk4x",
+                    "direction": "row",
+                    "splitPercentage": 51.07731305449936
+                  },
+                  "second": {
+                    "first": "Indicator!1ic3m9t",
+                    "second": "Indicator!3e5y1wi",
+                    "direction": "row",
+                    "splitPercentage": 51.07731305449936
+                  },
+                  "direction": "column",
+                  "splitPercentage": 50.32679738562089
+                },
                 "second": {
                   "first": {
                     "first": {
-                      "first": "Indicator!q8nmax",
-                      "second": "Indicator!3k2zk4x",
+                      "first": "RawMessages!1ljmt7k",
+                      "second": "RawMessages!2wqih1y",
                       "direction": "row",
-                      "splitPercentage": 51.07731305449936
+                      "splitPercentage": 49.90932305413693
                     },
                     "second": {
-                      "first": "Indicator!1ic3m9t",
-                      "second": "Indicator!3e5y1wi",
+                      "first": {
+                        "first": "Indicator!4cv50yt",
+                        "second": "Indicator!4ikh7ji",
+                        "direction": "row"
+                      },
+                      "second": "Indicator!4kknfgh",
                       "direction": "row",
-                      "splitPercentage": 51.07731305449936
+                      "splitPercentage": 67.00202142243083
                     },
-                    "direction": "column",
-                    "splitPercentage": 46.27659574468084
+                    "direction": "row",
+                    "splitPercentage": 51.07731305449936
                   },
                   "second": {
                     "first": {
                       "first": {
-                        "first": "RawMessages!2hb2lq4",
-                        "second": "RawMessages!3mwo1jy",
+                        "first": "Indicator!2fyyi4f",
+                        "second": "Indicator!20q56bl",
                         "direction": "row",
-                        "splitPercentage": 50.79726651480636
+                        "splitPercentage": 75.95356550580433
                       },
                       "second": {
-                        "first": "Indicator!4cv50yt",
-                        "second": "Indicator!4kknfgh",
+                        "first": "Indicator!13c44k5",
+                        "second": "Indicator!o6j925",
                         "direction": "row",
-                        "splitPercentage": 49.74093264248708
+                        "splitPercentage": 49.30967575025871
                       },
                       "direction": "row",
-                      "splitPercentage": 51.07731305449936
+                      "splitPercentage": 67.60089686098654
                     },
                     "second": {
                       "first": {
                         "first": {
-                          "first": "Indicator!2fyyi4f",
-                          "second": "Indicator!20q56bl",
-                          "direction": "row",
-                          "splitPercentage": 76.1682242990654
+                          "first": "Gauge!236ldp9",
+                          "second": "RawMessages!2gufwom",
+                          "direction": "column",
+                          "splitPercentage": 59.090909090909115
                         },
                         "second": {
-                          "first": "Indicator!13c44k5",
-                          "second": "Indicator!o6j925",
-                          "direction": "row"
+                          "first": "Gauge!9vjkfl",
+                          "second": "RawMessages!2tncmpc",
+                          "direction": "column",
+                          "splitPercentage": 58.67768595041321
                         },
-                        "direction": "row",
-                        "splitPercentage": 67.04689480354878
+                        "direction": "column"
                       },
                       "second": {
-                        "first": {
-                          "first": "Gauge!236ldp9",
-                          "second": "Gauge!9vjkfl",
-                          "direction": "column"
+                        "first": "StateTransitions!2nna31l",
+                        "second": {
+                          "first": "RawMessages!1wcthqu",
+                          "second": "RawMessages!36e15f",
+                          "direction": "row"
                         },
-                        "second": "StateTransitions!2nna31l",
-                        "direction": "row",
-                        "splitPercentage": 37.00887198986059
+                        "direction": "column",
+                        "splitPercentage": 79.33884297520662
                       },
-                      "direction": "column",
-                      "splitPercentage": 25.17860465116279
+                      "direction": "row",
+                      "splitPercentage": 37.00887198986059
                     },
                     "direction": "column",
-                    "splitPercentage": 18.19788085601223
+                    "splitPercentage": 20.655737704918035
                   },
                   "direction": "column",
-                  "splitPercentage": 27.89317507418398
+                  "splitPercentage": 13.841807909604523
                 },
-                "direction": "row",
-                "splitPercentage": 51.65936130244207
+                "direction": "column",
+                "splitPercentage": 25.941422594142267
               },
-              "second": {
-                "first": {
-                  "first": "Plot!30vyklp",
-                  "second": "Plot!vbk62z",
-                  "direction": "row",
-                  "splitPercentage": 48.46698113207547
-                },
-                "second": {
-                  "first": "Plot!1ziexsq",
-                  "second": "Plot!7h2ze8",
-                  "direction": "row"
-                },
-                "direction": "row",
-                "splitPercentage": 51.596743894802756
-              },
-              "direction": "column",
-              "splitPercentage": 78.125
+              "direction": "row",
+              "splitPercentage": 51.73160173160173
             },
             "second": {
               "first": {
@@ -3673,12 +3632,13 @@
                   },
                   "direction": "row"
                 },
-                "direction": "row"
+                "direction": "row",
+                "splitPercentage": 50.1082251082251
               },
               "direction": "row"
             },
             "direction": "column",
-            "splitPercentage": 87.35213830755232
+            "splitPercentage": 86.98817106460417
           }
         },
         {
@@ -3719,47 +3679,25 @@
             "direction": "column",
             "splitPercentage": 31.392174704276616
           }
-        },
-        {
-          "title": "3",
-          "layout": {
-            "first": {
-              "first": {
-                "first": "RawMessages!1xnxhr8",
-                "second": "StateTransitions!35efqdj",
-                "direction": "row",
-                "splitPercentage": 13.830318218784576
-              },
-              "second": {
-                "first": "RawMessages!1n78b2b",
-                "second": "RawMessages!29t8kd5",
-                "direction": "row"
-              },
-              "direction": "row",
-              "splitPercentage": 56.85897435897436
-            },
-            "second": {
-              "first": "Plot!3pj7rhg",
-              "second": {
-                "first": "Plot!3r9urei",
-                "second": "Plot!2u5sn9v",
-                "direction": "column"
-              },
-              "direction": "row",
-              "splitPercentage": 62.175324675324674
-            },
-            "direction": "column",
-            "splitPercentage": 24.931756141947226
-          }
         }
       ]
     }
   },
-  "globalVariables": {},
+  "globalVariables": {
+    "": "\"\""
+  },
   "userNodes": {
     "bb0c43ee-d21f-4f3c-8ac2-2967793521dd": {
       "sourceCode": "// The ./types module provides helper types for your Input events and messages.\nimport { Input, Message } from \"./types\";\n\n// Your script can output well-known message types, any of your custom message types, or\n// complete custom message types.\n//\n// Use `Message` to access types from the schemas defined in your data source:\n// type Twist = Message<\"geometry_msgs/Twist\">;\n//\n// Import from the @foxglove/schemas package to use foxglove schema types:\n// import { Pose, LocationFix } from \"@foxglove/schemas\";\n//\n// Conventionally, it's common to make a _type alias_ for your script's output type\n// and use that type name as the return type for your script function.\n// Here we've called the type `Output` but you can pick any type name.\ntype Output = {\n  hello: string;\n};\n\n// These are the topics your script \"subscribes\" to. Studio will invoke your script function\n// when any message is received on one of these topics.\nexport const inputs = [\"/input/topic\"];\n\n// Any output your script produces is \"published\" to this topic. Published messages are only visible within Studio, not to your original data source.\nexport const output = \"/studio_script/output_topic\";\n\n// This function is called with messages from your input topics.\n// The first argument is an event with the topic, receive time, and message.\n// Use the `Input<...>` helper to get the correct event type for your input topic messages.\nexport default function script(event: Input<\"/input/topic\">): Output {\n  return {\n    hello: \"world!\",\n  };\n};",
       "name": "bb0c43ee"
+    },
+    "280fbb11-966e-4785-a787-06c2e15f6de6": {
+      "sourceCode": "// The ./types module provides helper types for your Input events and messages.\nimport { Input, Message } from \"./types\";\n\n// Your script can output well-known message types, any of your custom message types, or\n// complete custom message types.\n//\n// Use `Message` to access types from the schemas defined in your data source:\n// type Twist = Message<\"geometry_msgs/Twist\">;\n//\n// Import from the @foxglove/schemas package to use foxglove schema types:\n// import { Pose, LocationFix } from \"@foxglove/schemas\";\n//\n// Conventionally, it's common to make a _type alias_ for your script's output type\n// and use that type name as the return type for your script function.\n// Here we've called the type `Output` but you can pick any type name.\ntype Output = {\n  hello: string;\n};\n\n// These are the topics your script \"subscribes\" to. Studio will invoke your script function\n// when any message is received on one of these topics.\nexport const inputs = [\"/logic3.line_position_front\"];\n\n// Any output your script produces is \"published\" to this topic. Published messages are only visible within Studio, not to your original data source.\nexport const output = \"/logic3.line_position_front_cm\";\n\n// This function is called with messages from your input topics.\n// The first argument is an event with the topic, receive time, and message.\n// Use the `Input<...>` helper to get the correct event type for your input topic messages.\nexport default function script(event: Input<\"/input/topic\">): Output {\n  return {\n    hello: \"world!\",\n  };\n};",
+      "name": "280fbb11"
+    },
+    "1f5edbf4-125d-4446-92da-5e019e46cc6f": {
+      "sourceCode": "// The ./types module provides helper types for your Input events and messages.\nimport { Input, Message } from \"./types\";\nimport { Logic3 } from \"robonaut_telemetry\";\n\n// Your script can output well-known message types, any of your custom message types, or\n// complete custom message types.\n//\n// Use `Message` to access types from the schemas defined in your data source:\n// type Twist = Message<\"geometry_msgs/Twist\">;\n//\n// Import from the @foxglove/schemas package to use foxglove schema types:\n// import { Pose, LocationFix } from \"@foxglove/schemas\";\n//\n// Conventionally, it's common to make a _type alias_ for your script's output type\n// and use that type name as the return type for your script function.\n// Here we've called the type `Output` but you can pick any type name.\ntype Output = {\n  linePositionCm: number;\n};\n\n// These are the topics your script \"subscribes\" to. Studio will invoke your script function\n// when any message is received on one of these topics.\nexport const inputs = [\"/logic3.line_position_front\"];\n\n// Any output your script produces is \"published\" to this topic. Published messages are only visible within Studio, not to your original data source.\nexport const output = \"/logic3.line_position_front_cm\";\n\n// This function is called with messages from your input topics.\n// The first argument is an event with the topic, receive time, and message.\n// Use the `Input<...>` helper to get the correct event type for your input topic messages.\nexport default function script(\n  event: Input<\"/logic3.line_position_front\", Logic3>,\n): Output {\n  // Assuming the original line position is in meters, convert it to centimeters\n  const linePositionMeters = event.message.linePosition; // Adjust this based on the actual structure of the incoming message\n  const linePositionCm = linePositionMeters * 100; // Conversion from meters to centimeters\n\n  return {\n    linePositionCm,\n  };\n}\n",
+      "name": "1f5edbf4"
     }
   },
   "playbackConfig": {
