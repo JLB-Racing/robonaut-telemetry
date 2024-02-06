@@ -451,7 +451,8 @@ namespace jlb
                         case logic_5_CANID:
                         {
                             robonaut_telemetry::msg::Logic5 logic5_msg;
-                            logic5_msg.collected_valid_gates = timestamp;
+                            logic5_msg.timestamp             = timestamp;
+                            logic5_msg.collected_valid_gates = jlb_rx_t.logic_5.collected_valid_gates;
                             logic5_msg.collected_gates       = jlb_rx_t.logic_5.collected_gates;
                             logic5_msg.flood                 = jlb_rx_t.logic_5.flood;
                             logic5_msg.follow_car            = jlb_rx_t.logic_5.follow_car;
